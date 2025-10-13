@@ -29,7 +29,7 @@ const Hero = () => {
                 ease: [0.6, 0.05, 0.01, 0.9]
               }}
               // Changed text to white for contrast
-              className="text-4xl text-[#14132C] sm:text-[4.5rem] md:text-[4.9rem] lg:text-[5.2rem] xl:text-[6rem] hero-heading font-extrabold leading-tight"
+              className="text-4xl text-[#14132C] sm:text-[2.7rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4.2rem] hero-heading font-extrabold leading-tight"
             >
               TAP. CHOOSE. ENJOY. <br /> IT'S THAT EASY.
             </motion.h1>
