@@ -66,7 +66,7 @@ const Home = () => {
         {/* Added div wrappers with IDs for scrolling */}
         <div id="about-us" className='px-1'><AboutUs /></div>
       </div>
-        <div id="contact" className='px-1'><Contact /></div>
+        <div id="contact"><Contact /></div>
     </div>
   );
 };

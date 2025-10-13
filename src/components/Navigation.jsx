@@ -38,7 +38,7 @@ const Navigation = () => {
                   smooth={true}
                   offset={-80} // Offset for the 80px fixed header
                   duration={500}
-                  className="cursor-pointer px-2 py-1 transition-all duration-300 text-[#14132C] hover:text-violet-500"
+                  className="cursor-pointer px-2 py-1  transition-all text-lg duration-300 text-[#14132C] hover:text-violet-500"
                 >
                   {link.text}
                 </Link>

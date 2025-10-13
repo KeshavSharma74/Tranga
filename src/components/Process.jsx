@@ -3,121 +3,167 @@ import './Process.css';
 import { IoSettingsOutline } from "react-icons/io5";
 import { BsWrenchAdjustableCircle } from "react-icons/bs";
 import { FaRegHandshake } from "react-icons/fa";
-import { motion } from 'framer-motion'; // Import motion
+import { motion, useInView } from 'framer-motion';
 
 const Process = () => {
-    // State to hold the fill percentage for the two progress lines
-    const [progress1, setProgress1] = useState(0);
-    const [progress2, setProgress2] = useState(0);
+    const [activeStep, setActiveStep] = useState(0);
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: false, margin: "-20%" });
 
-    // Refs to get the DOM elements for position calculations
-    const timelineRef = useRef(null);
-    const point1Ref = useRef(null);
-    const point2Ref = useRef(null);
-    const point3Ref = useRef(null);
+    useEffect(() => {
+        if (!isInView) return;
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!point1Ref.current || !point2Ref.current || !point3Ref.current) {
-                return;
-            }
+        const interval = setInterval(() => {
+            setActiveStep((prev) => (prev + 1) % 3);
+        }, 4000); // This duration should match the progress bar's animation duration
 
-            // Get the vertical position of each icon point
-            const p1Top = point1Ref.current.offsetTop;
-            const p2Top = point2Ref.current.offsetTop;
-            const p3Top = point3Ref.current.offsetTop;
-            
-            // Get the timeline container's position relative to the viewport
-            const timelineTop = timelineRef.current.getBoundingClientRect().top;
-            
-            // Calculate scroll position relative to the start of the timeline
-            const scrollPosition = window.innerHeight * 0.7 - timelineTop;
+        return () => clearInterval(interval);
+    }, [isInView]);
 
-            // --- Calculate Progress for the first line ---
-            const totalDistance1 = p2Top - p1Top;
-            const traveled1 = scrollPosition - p1Top;
-            const progressPercentage1 = (traveled1 / totalDistance1) * 100;
-            setProgress1(Math.max(0, Math.min(100, progressPercentage1)));
+    // --- UPDATED CONTENT BASED ON CLIENT BRIEF ---
+    const steps = [
+        {
+            icon: <IoSettingsOutline size={32} />,
+            title: "Zero-Cost, Seamless Installation",
+            description: "Our partnership begins with a no-obligation site survey. We then handle the complete professional installation at zero cost and with minimal disruption to your operations. You do nothing but choose the spot.",
+            color: "#8B5CF6",
+            gradient: "from-violet-500 to-purple-600"
+        },
+        {
+            icon: <BsWrenchAdjustableCircle size={32} />,
+            title: "Fully-Managed Operations",
+            description: "Forget about maintenance. We take care of everything: automated product restocking, routine servicing, and 24/7 dedicated support, ensuring your Tranga Pod is always online and earning for you.",
+            color: "#3B82F6",
+            gradient: "from-blue-500 to-cyan-500"
+        },
+        {
+            icon: <FaRegHandshake size={32} />,
+            title: "Lucrative Revenue Sharing",
+            description: "This is a true partnership where we only succeed if you do. With no upfront investment, you start earning from day one. We offer a highly competitive commission rate, starting at 30%.",
+            color: "#10B981",
+            gradient: "from-emerald-500 to-teal-500"
+        },
+    ];
 
-            // --- Calculate Progress for the second line ---
-            const totalDistance2 = p3Top - p2Top;
-            const traveled2 = scrollPosition - p2Top;
-            const progressPercentage2 = (traveled2 / totalDistance2) * 100;
-            setProgress2(Math.max(0, Math.min(100, progressPercentage2)));
-        };
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.1
+            }
+        }
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        // Initial call to set state on load
-        handleScroll();
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: [0.6, 0.05, 0.01, 0.9]
+            }
+        }
+    };
 
-        // Cleanup listener on component unmount
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    return (
+        <section className="process-section" ref={sectionRef}>
+            <div className="process-container">
+                {/* Header Section */}
+                <motion.div 
+                    className="process-header"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="process-main-title">
+                        A True Partnership: <span className="gradient-text">Zero Risk, All Reward</span>
+                    </h2>
+                    <p className="process-main-subtitle">
+                        Transform your unused space into a new revenue stream with our hassle-free commitment. If it doesn't work for you, we simply remove the machine. It's that easy.
+                    </p>
+                    <motion.button 
+                        className="process-cta-button"
+                        whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        Become a Partner
+                    </motion.button>
+                </motion.div>
 
-    const steps = [
-        {
-            icon: <IoSettingsOutline size={24} />,
-            title: "Effortless Setup",
-            description: "We handle the entire setup, starting with a detailed safety evaluation of your premises. A certified electrician performs the installation to meet all safety standards. A Tranga representative will then walk you through the machine's operation.",
-            ref: point1Ref,
-        },
-        {
-            icon: <BsWrenchAdjustableCircle size={24} />,
-            title: "Worry-Free Servicing",
-            description: "All upkeep is on us. We conduct regular servicing, restock fragrances, and handle any necessary repairs, giving you complete peace of mind. No effort is required from your side.",
-            ref: point2Ref,
-        },
-        {
-            icon: <FaRegHandshake size={24} />,
-            title: "Equitable Profit Sharing",
-            description: "There are no upfront costs for your establishment. Tranga manages all installation, refilling, and maintenance expenses. In return, we simply split the revenue generated by the machine with you.",
-            ref: point3Ref,
-        },
-    ];
+                {/* Steps Grid */}
+                <motion.div 
+                    className="process-steps-grid"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                >
+                    {steps.map((step, index) => (
+                        <motion.div
+                            key={index}
+                            className={`process-step-card ${activeStep === index ? 'active' : ''}`}
+                            variants={itemVariants}
+                            whileHover={{ 
+                                y: -10,
+                                transition: { duration: 0.3 }
+                            }}
+                            onClick={() => setActiveStep(index)}
+                        >
+                            <div className="step-number">{String(index + 1).padStart(2, '0')}</div>
+                            
+                            <motion.div 
+                                className={`step-icon bg-gradient-to-br ${step.gradient}`}
+                                animate={{
+                                    scale: activeStep === index ? [1, 1.1, 1] : 1,
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: activeStep === index ? Infinity : 0,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                {step.icon}
+                            </motion.div>
 
-    return (
-        <section className="process-section ">
-            <motion.div 
-                className="process-content"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true }}
-            >
-                <h2 className="process-title">
-                    Our Partnership Model: Zero Risk, All Reward for Your Venue
-                </h2>
-                <p className="process-subtitle">
-                    Our partner venues typically generate an average of £32,860 in revenue over a three-year term.
-                </p>
-                <button className="process-button">Get in Touch</button>
-            </motion.div>
+                            <h3 className="step-title">{step.title}</h3>
+                            <p className="step-description">{step.description}</p>
 
-            <div className="process-timeline" ref={timelineRef}>
-                {/* --- Static background lines --- */}
-                <div className="timeline-line-bg" style={{ top: point1Ref.current?.offsetTop, height: point2Ref.current && point1Ref.current ? point2Ref.current.offsetTop - point1Ref.current.offsetTop : 0 }} />
-                <div className="timeline-line-bg" style={{ top: point2Ref.current?.offsetTop, height: point3Ref.current && point2Ref.current ? point3Ref.current.offsetTop - point2Ref.current.offsetTop : 0 }} />
-                
-                {/* --- Dynamic progress lines --- */}
-                <div className="timeline-line-progress" style={{ top: point1Ref.current?.offsetTop, height: point2Ref.current && point1Ref.current ? (point2Ref.current.offsetTop - point1Ref.current.offsetTop) * (progress1 / 100) : 0 }} />
-                <div className="timeline-line-progress" style={{ top: point2Ref.current?.offsetTop, height: point3Ref.current && point2Ref.current ? (point3Ref.current.offsetTop - point2Ref.current.offsetTop) * (progress2 / 100) : 0 }} />
+                            <div className="step-progress-bar">
+                                <motion.div 
+                                        key={activeStep} 
+                                    className={`step-progress-fill bg-gradient-to-r ${step.gradient}`}
+                                    initial={{ width: "0%" }}
+                                    animate={{ 
+                                        width: activeStep === index ? "100%" : "0%" 
+                                    }}
+                                    transition={{ duration: 4, ease: "linear" }}
+                                />
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
 
-                {steps.map((step, index) => (
-                    <div className="timeline-item" key={index} ref={step.ref}>
-                        <div className="timeline-icon-container">
-                            <div className={`timeline-icon icon-${index + 1}`}>
-                                {step.icon}
-                            </div>
-                        </div>
-                        <div className="timeline-text-content">
-                            <h3 className="timeline-item-title">{step.title}</h3>
-                            <p className="timeline-item-description">{step.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
+                {/* Progress Dots */}
+                <div className="progress-dots">
+                    {steps.map((_, index) => (
+                        <motion.button
+                            key={index}
+                            className={`progress-dot ${activeStep === index ? 'active' : ''}`}
+                            onClick={() => setActiveStep(index)}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <span className="sr-only">Step {index + 1}</span>
+                        </motion.button>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Process;

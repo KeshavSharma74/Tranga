@@ -1,145 +1,145 @@
-import React, { useState } from 'react';
-// Importing icons from react-icons
-import { IoShieldCheckmarkOutline, IoRocketOutline } from "react-icons/io5";
-import { FaHandshake, FaStar } from "react-icons/fa";
+import React from 'react';
+// Importing relevant icons
+import { IoAnalyticsOutline, IoShieldCheckmarkOutline } from "react-icons/io5";
+import { FaHandshake, FaStreetView } from "react-icons/fa";
+import { BsWrenchAdjustableCircle } from "react-icons/bs";
 // Importing motion components from framer-motion
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-// Rewritten data for the accordion items
+// --- UPDATED Data for the main feature cards ---
 const features = [
-    {
-        icon: <IoShieldCheckmarkOutline size={20} />,
-        title: "Crystal-Clear Analytics",
-        description: "Gain access to a comprehensive real-time dashboard. Effortlessly monitor your machine’s performance, track revenue, and view detailed usage data. With Tranga, our partnership is always transparent."
-    },
-    {
-        icon: <FaHandshake size={20} />,
-        title: "A True 50/50 Partnership",
-        description: "We succeed when you succeed. Our business model is founded on a straightforward 50/50 profit share, ensuring a partnership that is mutually beneficial and built on trust."
-    },
-    {
-        icon: <FaStar size={20} />,
-        title: "Dedicated Support System",
-        description: "Your success is our top priority. Our team provides round-the-clock support and proactive maintenance to ensure your new revenue stream is always performing at its best."
-    },
-    {
-        icon: <IoRocketOutline size={20} />,
-        title: "Exceeding Expectations",
-        description: "Our philosophy is simple: we deliver more than we promise. We set achievable benchmarks and consistently aim to surpass them, maximizing the value Tranga brings to your venue."
-    }
+    {
+        icon: <IoAnalyticsOutline size={32} className="text-white" />,
+        bgColor: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+        title: "Transparent Analytics",
+        description: "Access a real-time partner dashboard to monitor performance, track your earnings, and view detailed usage data with complete transparency."
+    },
+    {
+        icon: <FaHandshake size={32} className="text-white" />,
+        bgColor: 'bg-gradient-to-br from-blue-500 to-cyan-500',
+        title: "Generous Profit Sharing",
+        description: "Our success is tied to yours. We offer a highly competitive commission rate starting at 30%, ensuring a mutually beneficial partnership with a significant return for your venue."
+    },
+    {
+        icon: <BsWrenchAdjustableCircle size={32} className="text-white" />,
+        bgColor: 'bg-gradient-to-br from-pink-500 to-rose-500',
+        title: "Zero-Hassle Operation",
+        description: "We handle everything: installation, product restocking, and 24/7 support. Your new revenue stream is completely hands-off for you and always ready for your customers."
+    },
+    {
+        icon: <FaStreetView size={32} className="text-white" />,
+        bgColor: 'bg-gradient-to-br from-emerald-500 to-green-600',
+        title: "A New Foot Traffic Driver",
+        description: "Our pods are stocked with unique, high-demand items and luxurious scents. This exclusive offering makes your venue a destination, attracting new customers."
+    }
 ];
 
 const WhyTranga = () => {
-    // State to manage which accordion item is open.
-    const [openIndex, setOpenIndex] = useState(1);
+    // Animation variants for the grid container
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }
+        }
+    };
 
-    // Animation variants for the container of the accordion items
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.15 }
-        }
-    };
+    // Animation variants for each card in the grid
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { 
+          opacity: 1, 
+          y: 0, 
+          transition: { duration: 0.6, ease: "easeOut" } 
+        }
+    };
 
-    // Animation variants for each accordion item
-    const itemVariants = {
-        hidden: { opacity: 0, x: -30 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-    };
+    return (
+        <section className="bg-gray-900 text-white min-h-screen flex items-center py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <div className="max-w-[1750px] mx-auto text-center"> 
+                
+                {/* --- Header --- */}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                        Unlock New Revenue with a <span className="gradient-text">Zero-Risk Partnership</span>
+                    </h2>
+                    <p className="mt-6 text-lg max-w-3xl mx-auto text-gray-300 leading-relaxed">
+                        Tranga Pods offers a completely hassle-free solution to generate new revenue, enhance customer experience, and drive foot traffic. With no upfront costs and a dedicated support system, you only profit.
+                    </p>
+                </motion.div>
+                
+                {/* --- Features Grid --- */}
+                <motion.div 
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-20"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                > 
+                    {features.map((feature, index) => (
+                        <motion.div 
+                            key={index} 
+                            variants={itemVariants}
+                            className="bg-gray-800/50 border border-gray-700 rounded-2xl p-8 text-left transform hover:-translate-y-2 transition-transform duration-300 group backdrop-blur-sm h-full flex flex-col"
+                        >
+                            <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${feature.bgColor} shadow-lg transition-transform duration-300 group-hover:scale-110 mb-6 flex-shrink-0`}>
+                                {feature.icon}
+                            </div>
+                            <h3 className="text-xl font-semibold text-white mb-2"> 
+                                {feature.title}
+                            </h3>
+                            <p className="text-gray-400 leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </motion.div>
+                    ))}
+                </motion.div>
 
-    return (
-        <>
-            {/* --- Section 1: The Tranga Partnership --- */}
-            <section className="bg-gray-900 text-white flex items-center py-20 px-6 sm:px-6 lg:px-8 overflow-hidden">
-                <div className="max-w-7xl mx-auto w-full"> 
-                    <motion.h2 
-                        className="text-4xl w-full max-w-3xl mx-auto md:text-5xl font-bold text-center mb-16 leading-tight"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        The Tranga Partnership: A Smarter Way to Boost Your Venue's Revenue
-                    </motion.h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                        {/* Left Column: Accordion */}
-                        <motion.div 
-                            className="flex flex-col gap-6"
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                        > 
-                            {features.map((feature, index) => (
-                                <motion.div 
-                                    key={index} 
-                                    variants={itemVariants}
-                                    className="border border-gray-700 rounded-lg p-6 cursor-pointer bg-gray-800 hover:border-blue-600 transition-colors duration-300"
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                >
-                                    <div className="flex items-center gap-4">
-                                        <div className={`transition-all duration-300 flex items-center justify-center h-12 w-12 rounded-full text-xl ${openIndex === index ? 'bg-blue-600' : 'bg-gray-700 text-gray-400'}`}> 
-                                            {feature.icon}
-                                        </div>
-                                        <h3 className={`text-xl font-semibold transition-colors duration-300 ${openIndex === index ? 'text-white' : 'text-gray-300'}`}> 
-                                            {feature.title}
-                                        </h3>
-                                    </div>
-                                    <AnimatePresence>
-                                        {openIndex === index && (
-                                            <motion.div
-                                                initial={{ opacity: 0, height: 0, paddingTop: 0 }}
-                                                animate={{ opacity: 1, height: 'auto', paddingTop: '24px' }}
-                                                exit={{ opacity: 0, height: 0, paddingTop: 0 }}
-                                                transition={{ duration: 0.4, ease: "easeInOut" }}
-                                                className="overflow-hidden"
-                                            >
-                                                <p className="text-gray-300 pl-16 text-lg leading-relaxed">
-                                                    {feature.description}
-                                                </p>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </motion.div>
-                            ))}
-                        </motion.div>
+                {/* --- Safety Section --- */}
+                <motion.div id="safety"
+                    className="mt-20 md:mt-24 max-w-4xl mx-auto"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                        Uncompromising on <span className="text-green-400">Safety</span>
+                    </h2>
+                    <p className="mt-5 text-lg leading-8 text-gray-300">
+                        We understand that introducing new technology requires absolute confidence. That is why every Tranga Pod is rigorously tested and fully certified to meet and exceed all UK safety standards, ensuring it is a secure addition to any environment.
+                    </p>
+                    <motion.div 
+                        className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.4, staggerChildren: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        {['UK Certified', 'Safety Tested', 'Fully Insured'].map((text, index) => (
+                            <motion.div 
+                                key={text}
+                                className="bg-gray-800 border border-gray-700 rounded-full px-4 py-2 flex items-center gap-2 text-sm sm:text-base"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                            >
+                                <span className="text-green-400 font-bold">✓</span>
+                                <span className="text-gray-300">{text}</span>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </motion.div>
 
-                        {/* Right Column: Image */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: true }}
-                        >
-                            <img 
-                                src="why.png" 
-                                alt="Analytics Dashboard" 
-                                className="rounded-xl shadow-2xl w-full h-auto object-cover max-h-[600px]"
-                            />
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* --- Section 2: Uncompromising on Safety --- */}
-            <section id="safety" className="relative bg-gradient-to-b from-gray-900 to-blue-900 text-white py-24 sm:py-32 px-4">
-                <motion.div 
-                    className="relative z-10 flex flex-col items-center text-center"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-4xl md:text-5xl font-bold">Uncompromising on Safety</h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-300 max-w-3xl">
-                        We understand that introducing new technology requires absolute confidence. That is why every Tranga machine is rigorously tested and fully certified to meet and exceed all UK safety standards, ensuring it is a secure addition to any environment.
-                    </p>
-                </motion.div>
-            </section>
-        </>
-    );
+            </div>
+        </section>
+    );
 };
 
 export default WhyTranga;
