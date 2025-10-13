@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+*{
+  font-family: "Inter", sans-serif;
+}
+
+.navbarFont{
+  font-weight: 500;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    /* This moves the content left by exactly half of its total width */
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-left {
+  /* The 'infinite' keyword is what makes it loop endlessly.
+     'linear' ensures a constant, smooth speed. */
+  animation: scrollLeft 60s linear infinite; 
+}
+
