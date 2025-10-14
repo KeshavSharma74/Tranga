@@ -1,25 +1,21 @@
 import React from 'react';
-import TestimonialCard from './TestimonialCard'; // Make sure this component exists and is correctly implemented
 import { motion } from 'framer-motion';
-import { Link as ScrollLink } from 'react-scroll'; // Import Link from react-scroll and rename it
+import { Link as ScrollLink } from 'react-scroll';
 
 const Hero = () => {
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="relative pt-10 lg:pt-0 flex flex-col justify-center bg-[url('/backgroundImage.jpg')] bg-cover bg-center overflow-hidden min-h-screen"
+      className="relative pt-24 lg:pt-0 flex flex-col justify-center min-h-screen overflow-hidden"
     >
-      {/* Dark Overlay for readability */}
-      <div className="absolute top-0 left-0 w-full h-full z-0"></div>
-
       {/* Hero Content */}
-      <div className="relative z-10 flex-grow flex items-center w-full max-w-[1750px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 flex-grow flex items-center w-full max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col lg:flex-row gap-16 items-center w-full">
+          
           {/* Text Section */}
-          <div className="flex flex-col justify-center gap-8 text-center lg:text-left lg:w-1/2">
+          <div className="flex  flex-col justify-center gap-8 text-center lg:text-left lg:w-1/2">
             <motion.h1
               initial={{ y: 60, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -28,11 +24,14 @@ const Hero = () => {
                 delay: 0.3,
                 ease: [0.6, 0.05, 0.01, 0.9]
               }}
-              // Changed text to white for contrast
-              className="text-4xl text-[#14132C] sm:text-[2.7rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4.2rem] hero-heading font-extrabold leading-tight"
+              className="text-4xl text-gray-900 sm:text-[2.7rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4.2rem] hero-heading font-extrabold leading-tight"
             >
-              TAP. CHOOSE. ENJOY. <br /> IT'S THAT EASY.
+              TAP. CHOOSE. ENJOY. <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+                IT'S THAT EASY.
+              </span>
             </motion.h1>
+
             <motion.p
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -41,11 +40,11 @@ const Hero = () => {
                 delay: 0.6,
                 ease: [0.6, 0.05, 0.01, 0.9]
               }}
-               // Changed text to white for contrast
-              className="text-sm text-[#14132C] md:text-xl  max-w-xl mx-auto lg:mx-0"
+              className="text-sm text-gray-600 md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Turn unused space into profit and elevate your customer experience. Our sleek Pods unlock new revenue by providing on-demand luxury fragrance refreshes and nightlife essentials, offering instant convenience your guests will appreciate.
+              Turn unused space into profit and elevate your customer experience. Our Tranga unlock new revenue by providing on-demand luxury fragrance refreshes and nightlife essentials, offering instant convenience your guests will appreciate.
             </motion.p>
+
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -62,16 +61,13 @@ const Hero = () => {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-300 font-semibold py-3 px-8 rounded-full shadow-md hover:cursor-pointer hover:from-violet-600 hover:to-fuchsia-600 inline-block text-center"
+                className="bg-white transition-all duration-300 font-semibold py-3 px-8 rounded-full shadow-md hover:cursor-pointer hover:bg-purple-50 hover:shadow-lg hover:shadow-purple-500/20 inline-block text-center border border-gray-200"
               >
                 <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)"
-                  }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="w-full text-xl md:2xl h-full hover:cursor-pointer text-white bg-transparent border-none"
+                  className="w-full text-xl md:2xl h-full hover:cursor-pointer text-purple-600 hover:text-purple-600"
                 >
                   Unlock new revenue
                 </motion.button>
@@ -79,7 +75,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* ===== IMAGE SECTION - CORRECTED ===== */}
+          {/* ===== IMAGE SECTION - NOW WITH TWO IMAGES ===== */}
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -88,43 +84,37 @@ const Hero = () => {
               delay: 0.4,
               ease: [0.6, 0.05, 0.01, 0.9]
             }}
-            // The container is a column by default, and a row on medium screens up.
-            // Added a gap for spacing between the images.
-            className="flex flex-col md:flex-row gap-4 mb-10 lg:mb-0 justify-center items-center lg:w-1/2"
+            className=" flex flex-col sm:flex-row justify-center items-center lg:w-1/2 mt-10 lg:mt-0 gap-5" // Added gap-8 for spacing between images
           >
+            {/* Convenience Pod Image */}
             <motion.img
-              src="fragnance.png"
-              alt="Fragrance Vending Machine"
-              // On mobile: 80% width, capped at 20rem.
-              // On desktop: 50% width to share space, capped at 24rem.
-              className="w-4/5 max-w-xs md:w-1/2 md:max-w-sm h-auto object-contain"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              src="conveniancePod.png"
+              alt="Convenience Pod"
+              className="max-w-[180px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[280px] h-auto object-contain" // Adjusted max-width for two images
+              initial={{ y: 20, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{
                 duration: 1,
                 delay: 0.8,
                 ease: "easeOut"
               }}
             />
+            {/* Fragrance Pod Image */}
             <motion.img
-              src="conveniance.png"
-              alt="Convenience Vending Machine"
-              // Same responsive classes applied here.
-              className="w-4/5 max-w-xs md:w-1/2 md:max-w-sm h-auto object-contain"
-              initial={{ y: 0, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              src="fragnancePod.png" // Assuming 'fragnancePod.png' is the correct filename
+              alt="Fragrance Pod"
+              className="max-w-[180px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[280px] h-auto object-contain" // Adjusted max-width for two images
+              initial={{ y: 20, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{
                 duration: 1,
-                delay: 1.2,
+                delay: 1, // Slightly delayed to animate after the first one
                 ease: "easeOut"
               }}
             />
           </motion.div>
         </div>
       </div>
-
-      {/* Testimonials Section (Scrollable) */}
-      {/* ... */}
     </motion.div>
   );
 };

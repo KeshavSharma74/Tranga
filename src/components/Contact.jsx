@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <section className="bg-gradient-to-br from-purple-50 via-white to-rose-50 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className=" py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         
         {/* --- Left Column: Information --- */}
@@ -40,13 +40,13 @@ const Contact = () => {
               <span><strong>Drive Foot Traffic</strong> with exclusive products your customers will love.</span>
             </li>
           </ul>
-
+{/* 
           <div className="mt-10">
             <a href="#" className="flex items-center gap-3 text-purple-600 font-semibold text-lg hover:underline">
               <IoCalendarOutline className="text-2xl" />
               <span>Schedule a Discovery Call</span>
             </a>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* --- Right Column: Contact Form --- */}

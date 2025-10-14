@@ -71,8 +71,8 @@ const HowItWorks = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 via-white to-rose-50 overflow-hidden">
-      <div className="max-w-[1750px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
+    <div className="bg-gradient-to-r from-purple-300 to-rose-300 overflow-hidden">
+      <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
 
         {/* --- MAIN HEADER (WITH GRADIENT) --- */}
         <motion.h1

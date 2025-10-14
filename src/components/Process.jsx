@@ -69,7 +69,7 @@ const Process = () => {
     };
 
     return (
-        <section className="process-section" ref={sectionRef}>
+        <section className=" max-w-[1350px] mx-auto process-section" ref={sectionRef}>
             <div className="process-container">
                 {/* Header Section */}
                 <motion.div 

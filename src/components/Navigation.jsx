@@ -7,7 +7,7 @@ const Navigation = () => {
 
   const navLinks = [
     { text: "How it works", to: "how-it-works" },
-    { text: "Discover the machine", to: "discover-the-machine" },
+    { text: "Discover the Pods", to: "discover-the-pods" },
     { text: "Process", to: "process" },
     { text: "Why Tranga", to: "why-tranga" },
     { text: "About us", to: "about-us" },
@@ -18,13 +18,13 @@ const Navigation = () => {
     <header className="fixed top-0 left-0 w-full z-[100] h-20 bg-white/20 backdrop-blur-lg border-b border-white/30">
       <div className="max-w-[1750px] h-full mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/">
-              <img
+        <a href="/">
+            <img
                 src="logo.png"
                 className="h-11 brightness-200 hover:cursor-pointer"
                 alt="Tranga Pods Logo"
-              />
-        </Link>
+            />
+        </a>
 
 
         {/* Desktop Menu */}

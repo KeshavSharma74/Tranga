@@ -8,10 +8,11 @@ import WhyTranga from '../components/WhyTranga';
 import AboutUs from '../components/AboutUs';
 import Contact from '../components/Contact';
 import { Title, Meta, Link } from "react-head";
+import ProductShowcase from '../components/ProductShowcase';
 
 const Home = () => {
   return (
-    <div className='' >
+    <div className='bg-gradient-to-r from-blue-300 via-purple-300 to-rose-300' >
 
             {/* ✅ SEO Meta Tags */}
       <Title>TAP. CHOOSE. ENJOY. | Smart Perfume Vending Machines | Convenience Pods</Title>
@@ -49,20 +50,21 @@ const Home = () => {
       {/* ✅ Canonical Link */}
       {/* <Link rel="canonical" href="https://www.yourwebsite.com/" /> */}
 
-      <Navigation />
+      
       <Hero />
 
       {/* --- First Gradient Section --- */}
-      <div className=" bg-gradient-to-br from-purple-50 via-cyan-50 to-purple-50">
+      <div className="">
         {/* Added div wrappers with IDs for scrolling */}
-        <div id="how-it-works" className='px-1' ><HowItWorks /></div>
-        <div id="discover-the-machine" className='px-1'><DiscoverTheMachine /></div>
+        {/* <div id="how-it-works" className='px-1' ><HowItWorks /></div> */}
+        {/* <div id="discover-the-machine" className='px-1'><DiscoverTheMachine /></div> */}
+        <ProductShowcase />
         <div id="process" ><Process /></div>
         <div id="why-tranga" ><WhyTranga /></div>
       </div>
 
       {/* --- Second Gradient Section --- */}
-      <div className='bg-gradient-to-br from-sky-100 via-purple-100 to-pink-100'>
+      <div className=''>
         {/* Added div wrappers with IDs for scrolling */}
         <div id="about-us" className='px-1'><AboutUs /></div>
       </div>
