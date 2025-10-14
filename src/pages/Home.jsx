@@ -9,11 +9,12 @@ import AboutUs from '../components/AboutUs';
 import Contact from '../components/Contact';
 import { Title, Meta, Link } from "react-head";
 import ProductShowcase from '../components/ProductShowcase';
+import BlinkingStars from '../components/BlinkingStars';
 
 const Home = () => {
   return (
     <div className='bg-gradient-to-r from-blue-300 via-purple-300 to-rose-300' >
-
+      <BlinkingStars />
             {/* ✅ SEO Meta Tags */}
       <Title>TAP. CHOOSE. ENJOY. | Smart Perfume Vending Machines | Convenience Pods</Title>
 

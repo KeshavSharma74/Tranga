@@ -12,10 +12,10 @@ const Hero = () => {
     >
       {/* Hero Content */}
       <div className="relative z-10 flex-grow flex items-center w-full max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-col lg:flex-row gap-16 items-center w-full">
+        <div className="flex flex-col lg:flex-row gap-16 items-center w-full ">
           
           {/* Text Section */}
-          <div className="flex  flex-col justify-center gap-8 text-center lg:text-left lg:w-1/2">
+          <div className="flex  flex-col justify-center gap-8 text-center lg:text-left lg:w-[50%]">
             <motion.h1
               initial={{ y: 60, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -84,13 +84,13 @@ const Hero = () => {
               delay: 0.4,
               ease: [0.6, 0.05, 0.01, 0.9]
             }}
-            className=" flex flex-col sm:flex-row justify-center items-center lg:w-1/2 mt-10 lg:mt-0 gap-5" // Added gap-8 for spacing between images
+            className=" flex flex-col sm:flex-row justify-center items-center lg:w-[60%] mt-10 lg:mt-0 gap-5" // Added gap-8 for spacing between images
           >
             {/* Convenience Pod Image */}
             <motion.img
               src="conveniancePod.png"
               alt="Convenience Pod"
-              className="max-w-[180px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[280px] h-auto object-contain" // Adjusted max-width for two images
+              className=" h-full object-contain" // Adjusted max-width for two images
               initial={{ y: 20, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{
@@ -99,19 +99,7 @@ const Hero = () => {
                 ease: "easeOut"
               }}
             />
-            {/* Fragrance Pod Image */}
-            <motion.img
-              src="fragnancePod.png" // Assuming 'fragnancePod.png' is the correct filename
-              alt="Fragrance Pod"
-              className="max-w-[180px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[280px] h-auto object-contain" // Adjusted max-width for two images
-              initial={{ y: 20, opacity: 0, scale: 0.95 }}
-              animate={{ y: 0, opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 1, // Slightly delayed to animate after the first one
-                ease: "easeOut"
-              }}
-            />
+
           </motion.div>
         </div>
       </div>
