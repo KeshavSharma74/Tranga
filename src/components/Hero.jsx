@@ -87,9 +87,9 @@ const Hero = () => {
             className=" flex flex-col sm:flex-row justify-center items-center lg:w-[60%] mt-10 lg:mt-0 gap-5"
           >
             <motion.img
-              src="conveniancePod.png"
+              src="machine1.png"
               alt="Convenience Pod"
-              className=" h-full border object-contain"
+              className=" h-full  object-contain "
               initial={{ y: 20, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{

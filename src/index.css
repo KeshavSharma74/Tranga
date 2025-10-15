@@ -21,7 +21,7 @@
 
 .animate-scroll-left {
   /* The 'infinite' keyword is what makes it loop endlessly.
-     'linear' ensures a constant, smooth speed. */
+    'linear' ensures a constant, smooth speed. */
   animation: scrollLeft 60s linear infinite; 
 }
 
@@ -78,5 +78,36 @@
   }
   85% {
     opacity: 0.3;
+  }
+}
+
+/* Updated Glowing Machine Image Styles */
+.glowing-machine-image {
+  border-radius: 20px; /* Ensure this matches your image's rounded corners */
+  
+  /* Adjusted glowing effect with gradient-like colors, spread far away */
+  box-shadow: 
+    0 0 40px rgba(224, 242, 254, 0.9),   /* Light sky blue (from-sky-100) - inner, brighter */
+    0 0 80px rgba(196, 229, 255, 0.7),   /* Slightly deeper blue (via-blue-200) - middle */
+    0 0 120px rgba(255, 228, 230, 0.5),  /* Soft pink (to-pink-100) - outer, most spread */
+    0 0 180px rgba(255, 240, 245, 0.3);  /* Even softer, very far spread */
+  
+  animation: pulseGradientGlow 4s infinite alternate ease-in-out; /* Adjusted animation duration */
+}
+
+@keyframes pulseGradientGlow {
+  0% {
+    box-shadow: 
+      0 0 30px rgba(224, 242, 254, 0.8),
+      0 0 70px rgba(196, 229, 255, 0.6),
+      0 0 110px rgba(255, 228, 230, 0.4),
+      0 0 160px rgba(255, 240, 245, 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 0 50px rgba(224, 242, 254, 1),
+      0 0 90px rgba(196, 229, 255, 0.8),
+      0 0 130px rgba(255, 228, 230, 0.6),
+      0 0 200px rgba(255, 240, 245, 0.4);
   }
 }
