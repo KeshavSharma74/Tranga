@@ -6,10 +6,12 @@ const Footer = () => {
     <footer className="bg-slate-900 text-gray-300">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          
-          <div className="md:col-span-3">
-            <h2 className="text-2xl font-bold text-white">Tranga</h2>
-          </div>
+                  
+        <div className="md:col-span-3">
+          <a href="/" className="text-2xl font-bold text-white">
+            Tranga
+          </a>
+        </div>
 
           <div className="md:col-span-9">
             <h3 className="text-lg font-semibold text-white">Discover Tranga</h3>
