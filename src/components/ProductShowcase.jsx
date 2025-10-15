@@ -7,6 +7,8 @@ import { MdOutlineWidgets } from 'react-icons/md';
 import { FaBoxOpen, FaChartLine, FaShoppingBag, FaPalette } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
+// --- UPDATED DATA WITH NEW COLORS ---
+
 const conveniencePodData = {
   title: "The Retention Pod: ",
   highlight: "Keep the Party Inside. Boost Your Bottom Line.",
@@ -15,19 +17,19 @@ const conveniencePodData = {
   imageSrc: "/conveniancePod.png",
   altText: "Tranga Pods Convenience Vending Machine",
   features: [
-    { icon: <FaChartLine size={24} className="text-white" />, bgColor: 'bg-cyan-500', title: 'Strategic Data Monetization', description: 'We capture real-time sales metrics and time data to reveal peak hours and customer demand, allowing you to build a comprehensive client demographic profile.' },
-    { icon: <FaShoppingBag size={24} className="text-white" />, bgColor: 'bg-fuchsia-500', title: 'Dynamic Catalogue Intelligence', description: 'Our exclusive, sought-after international selection dynamically adapts to trends and events, ensuring your micro-retail store is always current, relevant, and a consistent traffic driver.' },
-    { icon: <BsShieldCheck size={24} className="text-white" />, bgColor: 'bg-amber-500', title: 'Engineered for High Traffic', description: 'Designed with premium security and advanced componentry for 24/7 asset integrity. This commitment guarantees your revenue stream flows without interruption.' },
-    { icon: <FiCpu size={24} className="text-white" />, bgColor: 'bg-indigo-500', title: 'Micro-Retail Ecosystem', description: 'Inspired by European luxury retailers, the Pod transforms your corner space into a powerful, full-service ecosystem. This ensures guests linger longer and spend more.' },
+    { icon: <FaChartLine size={24} className="text-white" />, bgColor: 'bg-[#FF9E01]', title: 'Strategic Data Monetization', description: 'We capture real-time sales metrics and time data to reveal peak hours and customer demand, allowing you to build a comprehensive client demographic profile.' },
+    { icon: <FaShoppingBag size={24} className="text-white" />, bgColor: 'bg-[#F05258]', title: 'Dynamic Catalogue Intelligence', description: 'Our exclusive, sought-after international selection dynamically adapts to trends and events, ensuring your micro-retail store is always current, relevant, and a consistent traffic driver.' },
+    { icon: <BsShieldCheck size={24} className="text-white" />, bgColor: 'bg-[#FF9E01]', title: 'Engineered for High Traffic', description: 'Designed with premium security and advanced componentry for 24/7 asset integrity. This commitment guarantees your revenue stream flows without interruption.' },
+    { icon: <FiCpu size={24} className="text-white" />, bgColor: 'bg-[#F05258]', title: 'Micro-Retail Ecosystem', description: 'Inspired by European luxury retailers, the Pod transforms your corner space into a powerful, full-service ecosystem. This ensures guests linger longer and spend more.' },
   ],
 };
 
 const convenienceData = {
   title: 'CURATE, TRANSACT, RETAIN',
   features: [
-    { icon: <MdOutlineWidgets size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-cyan-500 to-blue-500', title: '1. CURATE', description: 'Guests browse our exclusive, sought-after product catalogue. This unique, trending mix drives demand and acts as a high-traffic magnet for your venue.' },
-    { icon: <BsCreditCard size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-fuchsia-500 to-purple-500', title: '2. TRANSACT', description: 'Secure payment is contactless and instantaneous. We ensure zero friction, zero queue time, and a perfectly seamless guest experience.' },
-    { icon: <FaBoxOpen size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-amber-500 to-orange-500', title: '3. RETAIN', description: 'By solving the forgotten-item crisis, your captive audience stays longer, spends more, and actively increases the spend at your venue.' },
+    { icon: <MdOutlineWidgets size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-[#FF9E01] to-[#F05258]', title: '1. CURATE', description: 'Guests browse our exclusive, sought-after product catalogue. This unique, trending mix drives demand and acts as a high-traffic magnet for your venue.' },
+    { icon: <BsCreditCard size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-[#F05258] to-[#FF9E01]', title: '2. TRANSACT', description: 'Secure payment is contactless and instantaneous. We ensure zero friction, zero queue time, and a perfectly seamless guest experience.' },
+    { icon: <FaBoxOpen size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-[#FF9E01] to-[#F05258]', title: '3. RETAIN', description: 'By solving the forgotten-item crisis, your captive audience stays longer, spends more, and actively increases the spend at your venue.' },
   ],
 };
 
@@ -39,19 +41,19 @@ const fragrancePodData = {
   imageSrc: "/fragnancePod.png",
   altText: "Tranga Pods Fragrance Vending Machine",
   features: [
-    { icon: <FaChartLine size={24} className="text-white" />, bgColor: 'bg-blue-500', title: 'Advanced Demographic Intelligence', description: 'We capture real-time preference data based on scents chosen and skipped. This intelligence reveals your client\'s specific taste profile, allowing you to curate future events.' },
-    { icon: <FaPalette size={24} className="text-white" />, bgColor: 'bg-pink-500', title: 'Future-Proofed Luxury', description: 'We provide a rotating collection of trend-setting fragrances, meticulously chosen for impact. Your amenity is guaranteed to be relevant and a marker of unmistakable luxury.' },
-    { icon: <BsShieldCheck size={24} className="text-white" />, bgColor: 'bg-green-500', title: 'Instant Brand Elevation', description: 'The Pod transforms a corner into a high-value, sophisticated sensory touchpoint. This creates a powerful brand association that immediately uplifts your venue\'s status.' },
-    { icon: <FiSliders size={24} className="text-white" />, bgColor: 'bg-purple-500', title: 'Unseen Operational Luxury', description: 'The entire system is fully autonomous, from trend updates to payment processing. This high-impact, low-effort amenity requires zero staff intervention.' },
+    { icon: <FaChartLine size={24} className="text-white" />, bgColor: 'bg-[#F05258]', title: 'Advanced Demographic Intelligence', description: 'We capture real-time preference data based on scents chosen and skipped. This intelligence reveals your client\'s specific taste profile, allowing you to curate future events.' },
+    { icon: <FaPalette size={24} className="text-white" />, bgColor: 'bg-[#FF9E01]', title: 'Future-Proofed Luxury', description: 'We provide a rotating collection of trend-setting fragrances, meticulously chosen for impact. Your amenity is guaranteed to be relevant and a marker of unmistakable luxury.' },
+    { icon: <BsShieldCheck size={24} className="text-white" />, bgColor: 'bg-[#F05258]', title: 'Instant Brand Elevation', description: 'The Pod transforms a corner into a high-value, sophisticated sensory touchpoint. This creates a powerful brand association that immediately uplifts your venue\'s status.' },
+    { icon: <FiSliders size={24} className="text-white" />, bgColor: 'bg-[#FF9E01]', title: 'Unseen Operational Luxury', description: 'The entire system is fully autonomous, from trend updates to payment processing. This high-impact, low-effort amenity requires zero staff intervention.' },
   ],
 };
 
 const fragranceData = {
   title: 'CURATE. TRANSACT. REFRESH.',
   features: [
-    { icon: <GiPerfumeBottle size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-rose-500 to-pink-500', title: '1. CURATE', description: 'Guests browse our rotating library of exclusive, trend-setting fragrances. They instantly find the perfect curated luxury scent to match the moment.' },
-    { icon: <BsCreditCard size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-violet-500 to-purple-500', title: '2. TRANSACT', description: 'Payment is instantaneous, secure, and entirely frictionless. Our contactless technology completes the transaction in under a second, upholding the ultimate luxury service standard.' },
-    { icon: <RiMistFill size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-sky-500 to-blue-500', title: '3. REFRESH', description: 'Guests receive an exclusive, memory-making scent they can\'t get anywhere else. This signature sensory experience creates a positive association, driving repeat engagement with your venue.' },
+    { icon: <GiPerfumeBottle size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-[#FF9E01] to-[#F05258]', title: '1. CURATE', description: 'Guests browse our rotating library of exclusive, trend-setting fragrances. They instantly find the perfect curated luxury scent to match the moment.' },
+    { icon: <BsCreditCard size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-[#F05258] to-[#FF9E01]', title: '2. TRANSACT', description: 'Payment is instantaneous, secure, and entirely frictionless. Our contactless technology completes the transaction in under a second, upholding the ultimate luxury service standard.' },
+    { icon: <RiMistFill size={28} className="text-white" />, bgColor: 'bg-gradient-to-tr from-[#FF9E01] to-[#F05258]', title: '3. REFRESH', description: 'Guests receive an exclusive, memory-making scent they can\'t get anywhere else. This signature sensory experience creates a positive association, driving repeat engagement with your venue.' },
   ],
 };
 
@@ -82,7 +84,7 @@ const ProductShowcase = () => {
     };
 
   return (
-    <div id="discover-the-pods" className="bg-gradient-to-br from-green-200 via-sky-200 to-purple-200 overflow-hidden">
+    <div id="discover-the-pods" className="bg-gradient-to-br from-green-100 via-sky-100 to-purple-100 overflow-hidden">
       <div className='max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center'>
         
         {/* --- MAIN HEADER --- */}
@@ -93,7 +95,7 @@ const ProductShowcase = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-5xl sm:text-6xl font-bold text-gray-800 tracking-tight"
         >
-          Micro-Retail, <span className="gradient-text">Maximized Profit</span>
+          Micro-Retail, <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">Maximized Profit</span>
         </motion.h1>
         <motion.p
           initial={{ y: 50, opacity: 0 }}
@@ -108,7 +110,7 @@ const ProductShowcase = () => {
         {/* --- CONVENIENCE POD SECTION --- */}
         <div id="convenience-pod" className="mt-24">
             <motion.h2 initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight'>
-                {conveniencePodData.title}<span className="gradient-text">{conveniencePodData.highlight}</span>
+                {conveniencePodData.title}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">{conveniencePodData.highlight}</span>
             </motion.h2>
             <motion.p initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }} className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
                 {conveniencePodData.description}
@@ -147,7 +149,7 @@ const ProductShowcase = () => {
         {/* --- FRAGRANCE POD SECTION --- */}
         <div id="fragrance-pod" className="mt-24">
             <motion.h2 initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight'>
-                {fragrancePodData.title}<span className="gradient-text">{fragrancePodData.highlight}</span>
+                {fragrancePodData.title}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">{fragrancePodData.highlight}</span>
             </motion.h2>
             <motion.p initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }} className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
                 {fragrancePodData.description}

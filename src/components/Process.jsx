@@ -26,22 +26,19 @@ const Process = () => {
             icon: <IoSettingsOutline size={32} />,
             title: "Zero-Burden Deployment",
             description: "We begin with an expert site survey to identify the ideal high-traffic placement. We manage the complete deployment, including all permits and a certified electrician—at zero cost or effort to your staff.",
-            color: "#8B5CF6",
-            gradient: "from-violet-500 to-purple-600"
+            gradient: "from-[#FF9E01] to-[#F05258]"
         },
         {
             icon: <BsWrenchAdjustableCircle size={32} />,
             title: "Fully-Managed Operations",
             description: "Forget the hassle. We provide proactive, end-to-end management: automated product restocking, routine asset servicing, and 24/7 technical oversight. Your Tranga Pod is always online, active, and earning for you.",
-            color: "#3B82F6",
-            gradient: "from-blue-500 to-cyan-500"
+            gradient: "from-[#F05258] to-[#FF9E01]"
         },
         {
             icon: <FaRegHandshake size={32} />,
             title: "Lucrative Revenue Share",
             description: "This is a true partnership founded on shared success. With zero upfront investment required, your venue begins generating passive income immediately. We offer a highly competitive, performance-based revenue share.",
-            color: "#10B981",
-            gradient: "from-emerald-500 to-teal-500"
+            gradient: "from-[#FF9E01] to-[#F05258]"
         },
     ];
 
@@ -80,7 +77,7 @@ const Process = () => {
                     viewport={{ once: true }}
                 >
                     <h2 className="process-main-title">
-                        A True Partnership: <span className="gradient-text">Zero Risk, All Reward</span>
+                        A True Partnership: <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">Zero Risk, All Reward</span>
                     </h2>
                     <p className="process-main-subtitle">
                         We deliver the unique experience directly to your location. Our commitment policy is simple: Should the asset not deliver on its promise, we remove it—no questions asked.
@@ -93,8 +90,8 @@ const Process = () => {
                         offset={-80}
                     >
                         <motion.div
-                            className=" bg-purple-600 px-6 py-2 max-w-[14rem] rounded-full text-[1.1rem] text-white font-semibold hover:cursor-pointer mx-auto "
-                            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
+                            className="bg-[#FF9E01] px-6 py-2 max-w-[14rem] rounded-full text-[1.1rem] text-white font-semibold hover:cursor-pointer mx-auto "
+                            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255, 158, 1, 0.3)" }}
                             whileTap={{ scale: 0.98 }}
                         >
                             Become a Partner

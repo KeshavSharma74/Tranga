@@ -16,7 +16,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Unlock New Revenue Streams with <span className="gradient-text">Tranga Pods</span>
+            Unlock New Revenue Streams with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">Tranga Pods</span>
           </h1>
 
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
@@ -25,15 +25,15 @@ const Contact = () => {
 
           <ul className="mt-8 flex flex-col gap-4 text-gray-700">
             <li className="flex items-center gap-3">
-              <IoCheckmarkCircle className="text-green-500 text-2xl" />
+              <IoCheckmarkCircle className="text-[#FF9E01] text-2xl" />
               <span><strong>No costs</strong> - just profits.</span>
             </li>
             <li className="flex items-center gap-3">
-              <IoCheckmarkCircle className="text-green-500 text-2xl" />
+              <IoCheckmarkCircle className="text-[#FF9E01] text-2xl" />
               <span><strong>No maintenance headaches</strong> - we handle it all.</span>
             </li>
             <li className="flex items-center gap-3">
-              <IoCheckmarkCircle className="text-green-500 text-2xl" />
+              <IoCheckmarkCircle className="text-[#FF9E01] text-2xl" />
               <span><strong>No missed crowds</strong> - attract more visitors.</span>
             </li>
           </ul>
@@ -50,22 +50,22 @@ const Contact = () => {
           <form action="#" className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label htmlFor="FirstName" className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-              <input type="text" id="FirstName" placeholder="Jane" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
+              <input type="text" id="FirstName" placeholder="Jane" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]"/>
             </div>
 
             <div>
               <label htmlFor="LastName" className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-              <input type="text" id="LastName" placeholder="Doe" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
+              <input type="text" id="LastName" placeholder="Doe" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]"/>
             </div>
 
             <div className="sm:col-span-2">
               <label htmlFor="Email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input type="email" id="Email" placeholder="jane.doe@example.com" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
+              <input type="email" id="Email" placeholder="jane.doe@example.com" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]"/>
             </div>
 
             <div className="sm:col-span-2">
               <label htmlFor="VenueType" className="block text-sm font-medium text-gray-700 mb-1">Venue Type</label>
-              <select id="VenueType" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500">
+              <select id="VenueType" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]">
                 <option>Please select...</option>
                 <option>Nightclub / Bar / Lounge</option>
                 <option>Gym / Spa / Salon</option>
@@ -78,24 +78,24 @@ const Contact = () => {
 
             <div>
               <label htmlFor="VenueName" className="block text-sm font-medium text-gray-700 mb-1">Venue Name</label>
-              <input type="text" id="VenueName" placeholder="e.g., The Grand Hotel" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
+              <input type="text" id="VenueName" placeholder="e.g., The Grand Hotel" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]"/>
             </div>
             
             <div>
               <label htmlFor="VenueLocation" className="block text-sm font-medium text-gray-700 mb-1">Venue Location</label>
-              <input type="text" id="VenueLocation" placeholder="e.g., New York, NY" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
+              <input type="text" id="VenueLocation" placeholder="e.g., New York, NY" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]"/>
             </div>
 
             <div className="sm:col-span-2">
               <label htmlFor="Message" className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-              <textarea id="Message" rows="4" placeholder="Tell us more about your venue or ask any questions..." className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"></textarea>
+              <textarea id="Message" rows="4" placeholder="Tell us more about your venue or ask any questions..." className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-[#FF9E01] focus:ring-[#FF9E01]"></textarea>
             </div>
 
             <div className="sm:col-span-2">
               <motion.button
                 type="submit"
-                className="w-full rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 text-center text-sm font-bold text-white transition-transform focus:outline-none focus:ring focus:ring-purple-300"
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(139, 92, 246, 0.3)" }}
+                className="w-full rounded-lg bg-gradient-to-r from-[#FF9E01] to-[#F05258] px-6 py-3 text-center text-sm font-bold text-white transition-transform focus:outline-none focus:ring focus:ring-[#FF9E01]/50"
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(255, 158, 1, 0.3)" }}
                 whileTap={{ scale: 0.98 }}
               >
                 Submit Inquiry

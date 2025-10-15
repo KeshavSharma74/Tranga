@@ -56,7 +56,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-green-200 via-sky-200 to-purple-200 overflow-hidden">
+    <div className="bg-gradient-to-br from-violet-200 via-sky-100 to-green-100 overflow-hidden">
       <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         
         {/* --- Header --- */}
@@ -68,7 +68,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 tracking-tight">
-            Our Mission: <span className="gradient-text">Redefining Convenience, One Pod at a Time</span>
+            Our Mission: <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">Redefining Convenience, One Pod at a Time</span>
           </h1>
         </motion.div>
 
@@ -133,10 +133,10 @@ const AboutUs = () => {
                     className="flex items-center justify-between w-full text-left gap-4 group"
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   >
-                    <h3 className={`text-lg font-semibold transition-colors duration-300 ${openIndex === index ? 'text-purple-600' : 'text-gray-800 group-hover:text-purple-600'}`}>
+                    <h3 className={`text-lg font-semibold transition-colors duration-300 ${openIndex === index ? 'text-[#F05258]' : 'text-gray-800 group-hover:text-[#F05258]'}`}>
                       {faq.question}
                     </h3>
-                    <FiChevronDown className={`flex-shrink-0 text-2xl transition-transform duration-300 ease-in-out ${openIndex === index ? 'rotate-180 text-purple-600' : 'rotate-0 text-gray-400 group-hover:text-purple-600'}`} />
+                    <FiChevronDown className={`flex-shrink-0 text-2xl transition-transform duration-300 ease-in-out ${openIndex === index ? 'rotate-180 text-[#F05258]' : 'rotate-0 text-gray-400 group-hover:text-[#F05258]'}`} />
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -169,7 +169,7 @@ const AboutUs = () => {
                     smooth={true}
                     offset={-80}
                     duration={500}
-                    className="text-purple-600 font-semibold hover:underline hover:cursor-pointer"
+                    className="text-[#F05258] font-semibold hover:underline hover:cursor-pointer"
                   >
                     here
                   </ScrollLink>
