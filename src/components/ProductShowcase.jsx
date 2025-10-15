@@ -84,7 +84,7 @@ const ProductShowcase = () => {
     };
 
   return (
-    <div id="discover-the-pods" className="bg-gradient-to-br from-green-100 via-sky-100 to-purple-100 overflow-hidden">
+    <div  className=" bg-gradient-to-br from-green-100 via-sky-100 to-purple-100 overflow-hidden">
       <div className='max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center'>
         
         {/* --- MAIN HEADER --- */}
@@ -147,7 +147,7 @@ const ProductShowcase = () => {
 
 
         {/* --- FRAGRANCE POD SECTION --- */}
-        <div id="fragrance-pod" className="mt-24">
+        <div id="discover-the-pods" className="mt-24">
             <motion.h2 initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight'>
                 {fragrancePodData.title}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">{fragrancePodData.highlight}</span>
             </motion.h2>

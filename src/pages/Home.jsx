@@ -13,7 +13,7 @@ import BlinkingStars from '../components/BlinkingStars';
 
 const Home = () => {
   return (
-    <div className='bg-gradient-to-r from-blue-300 via-purple-300 to-rose-300' >
+    <div className='bg-gradient-to-br from-teal-100 via-blue-100 to-violet-200' >
       {/* <BlinkingStars /> */}
             {/* ✅ SEO Meta Tags */}
       <Title>TAP. CHOOSE. ENJOY. | Smart Perfume Vending Machines | Convenience Pods</Title>
@@ -60,7 +60,7 @@ const Home = () => {
         {/* <div id="how-it-works" className='px-1' ><HowItWorks /></div> */}
         {/* <div id="discover-the-machine" className='px-1'><DiscoverTheMachine /></div> */}
         <ProductShowcase />
-        <div id="process" className='bg-gradient-to-br from-teal-100 via-blue-100 to-violet-200' ><Process /></div>
+        <div id="process" className='' ><Process /></div>
         <div id="why-tranga"  ><WhyTranga /></div>
       </div>
 
