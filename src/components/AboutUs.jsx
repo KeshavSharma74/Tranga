@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
+import { Link as ScrollLink } from 'react-scroll'; // Import the scroll link
 
 const AboutUs = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -161,7 +162,18 @@ const AboutUs = () => {
                 </motion.div>
               ))}
                 <p className="mt-6 text-center text-gray-600">
-                    Still have a question? Please contact us <a href="#contact" className="text-purple-600 font-semibold hover:underline">here</a> and we'll get back to you with a response as soon as we can.
+                  Still have a question? Please contact us{" "}
+                  <ScrollLink
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className="text-purple-600 font-semibold hover:underline hover:cursor-pointer"
+                  >
+                    here
+                  </ScrollLink>
+                  {" "}and we'll get back to you with a response as soon as we can.
                 </p>
             </motion.div>
           </div>
