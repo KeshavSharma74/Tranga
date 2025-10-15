@@ -59,7 +59,7 @@ const Navigation = () => {
       {/* Animated Mobile Menu */}
       <nav
         // ✨ CHANGE THIS LINE: Replaced background/blur with a solid gradient
-        className={`lg:hidden pt-10 bg-gradient-to-r from-sky-100 to-pink-100 absolute top-0 right-0 w-[70%] sm:w-[40%] h-[100vh] shadow-xl transform transition-all duration-500 ease-in-out ${
+        className={`lg:hidden pt-10 bg-gradient-to-r from-sky-200 to-pink-200 absolute top-0 right-0 w-[70%] sm:w-[40%] h-[100vh] shadow-xl transform transition-all duration-500 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

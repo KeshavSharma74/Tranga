@@ -24,11 +24,11 @@ const Hero = () => {
                 delay: 0.3,
                 ease: [0.6, 0.05, 0.01, 0.9]
               }}
-              className="text-4xl text-gray-900 sm:text-[2.7rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4.2rem] hero-heading font-extrabold leading-tight"
+              className="text-4xl text-gray-900 sm:text-[2.7rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4.2rem] hero-heading font-extrabold "
             >
-              TAP. CHOOSE. ENJOY. <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
-                IT'S THAT EASY.
+              TAP. ACQUIRE. ENHANCE. <br />
+              <span className="bg-clip-text text-[1.3rem] sm:text-[1.7rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[2.8rem] 2xl:text-[3.2rem] text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+                Seamless for Guests. Profitable for You.
               </span>
             </motion.h1>
 
@@ -42,7 +42,7 @@ const Hero = () => {
               }}
               className="text-sm text-gray-600 md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Turn unused space into profit and elevate your customer experience. Our Tranga unlock new revenue by providing on-demand luxury fragrance refreshes and nightlife essentials, offering instant convenience your guests will appreciate.
+              Tranga Pods is your flexible asset taking unused space, guaranteeing guest retention and maximized revenue. Choose the Convenience Pod (nightlife essentials that ensure guests stay put and enhance your income streams), the Fragrance Pod (luxury refreshes), or both systems. Our exclusive, sought-after product catalogue dynamically adapts to trends, driving high customer traffic to your venue.
             </motion.p>
 
             <motion.div
@@ -56,7 +56,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start"
             >
               <ScrollLink
-                to="discover-the-machine"
+                to="discover-the-pods"
                 spy={true}
                 smooth={true}
                 offset={-80}

@@ -55,7 +55,7 @@ const WhyTranga = () => {
     };
 
     return (
-        <section className="bg-gradient-to-r from-blue-300 via-purple-300 to-rose-300 min-h-screen flex items-center py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section className="bg-gradient-to-br from-violet-100 via-sky-100 to-green-100 min-h-screen flex items-center py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div className="max-w-[1350px] mx-auto text-center"> 
                 
                 {/* --- Header --- */}

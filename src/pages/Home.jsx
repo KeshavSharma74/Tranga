@@ -14,7 +14,7 @@ import BlinkingStars from '../components/BlinkingStars';
 const Home = () => {
   return (
     <div className='bg-gradient-to-r from-blue-300 via-purple-300 to-rose-300' >
-      <BlinkingStars />
+      {/* <BlinkingStars /> */}
             {/* ✅ SEO Meta Tags */}
       <Title>TAP. CHOOSE. ENJOY. | Smart Perfume Vending Machines | Convenience Pods</Title>
 
@@ -60,14 +60,14 @@ const Home = () => {
         {/* <div id="how-it-works" className='px-1' ><HowItWorks /></div> */}
         {/* <div id="discover-the-machine" className='px-1'><DiscoverTheMachine /></div> */}
         <ProductShowcase />
-        <div id="process" ><Process /></div>
-        <div id="why-tranga" ><WhyTranga /></div>
+        <div id="process" className='bg-gradient-to-br from-teal-100 via-blue-100 to-violet-200' ><Process /></div>
+        <div id="why-tranga"  ><WhyTranga /></div>
       </div>
 
       {/* --- Second Gradient Section --- */}
       <div className=''>
         {/* Added div wrappers with IDs for scrolling */}
-        <div id="about-us" className='px-1'><AboutUs /></div>
+        <div id="about-us" className=''><AboutUs /></div>
       </div>
         <div id="contact"><Contact /></div>
     </div>

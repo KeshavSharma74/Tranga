@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-8">
               <div className="flex flex-col gap-3">
                 <Link to="how-it-works" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">How it works</Link>
-                <Link to="discover-the-machine" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Discover the machine</Link>
+                <Link to="discover-the-pods" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Discover the Pods</Link>
                 <Link to="process" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Process</Link>
                 
                 {/* ✨ CHANGED THIS LINE from <a> to <Link> */}

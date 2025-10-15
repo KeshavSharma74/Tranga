@@ -87,7 +87,7 @@ const ProductShowcase = () => {
     };
 
   return (
-    <div id="how-it-works" className="bg-gradient-to-r from-blue-300 via-purple-300 to-rose-300 overflow-hidden">
+    <div id="how-it-works" className="bg-gradient-to-br from-green-200 via-sky-200 to-purple-200  overflow-hidden">
       <div className='max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center'>
         
         {/* --- MAIN HEADER (from HowItWorks) --- */}
