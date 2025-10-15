@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoCheckmarkCircle, IoCalendarOutline } from "react-icons/io5";
+import { IoCheckmarkCircle } from "react-icons/io5";
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -15,29 +15,26 @@ const Contact = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* UPDATED HEADER */}
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Partner with <span className="gradient-text">Tranga Pods</span> and Unlock New Revenue Streams
+            Unlock New Revenue Streams with <span className="gradient-text">Tranga Pods</span>
           </h1>
 
-          {/* UPDATED DESCRIPTION */}
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-            Ready to transform your unused space into a profitable, hassle-free asset? Fill out the form to begin your partnership inquiry. Our team will get in touch to discuss our competitive commission structure and how a Tranga Pod can benefit your business.
+            Install your Tranga Pod and start earning more by submitting the form.
           </p>
 
-          {/* UPDATED BENEFITS */}
           <ul className="mt-8 flex flex-col gap-4 text-gray-700">
             <li className="flex items-center gap-3">
               <IoCheckmarkCircle className="text-green-500 text-2xl" />
-              <span><strong>Zero Upfront Costs</strong> & a highly competitive 30%+ commission rate.</span>
+              <span><strong>No costs</strong> - just profits.</span>
             </li>
             <li className="flex items-center gap-3">
               <IoCheckmarkCircle className="text-green-500 text-2xl" />
-              <span><strong>Fully Managed Service</strong> including installation, restocking, and 24/7 support.</span>
+              <span><strong>No maintenance headaches</strong> - we handle it all.</span>
             </li>
             <li className="flex items-center gap-3">
               <IoCheckmarkCircle className="text-green-500 text-2xl" />
-              <span><strong>Drive Foot Traffic</strong> with exclusive products your customers will love.</span>
+              <span><strong>No missed crowds</strong> - attract more visitors.</span>
             </li>
           </ul>
         </motion.div>
@@ -66,7 +63,6 @@ const Contact = () => {
               <input type="email" id="Email" placeholder="jane.doe@example.com" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
             </div>
 
-            {/* --- NEW: VENUE TYPE FIELD --- */}
             <div className="sm:col-span-2">
               <label htmlFor="VenueType" className="block text-sm font-medium text-gray-700 mb-1">Venue Type</label>
               <select id="VenueType" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500">
@@ -87,7 +83,6 @@ const Contact = () => {
             
             <div>
               <label htmlFor="VenueLocation" className="block text-sm font-medium text-gray-700 mb-1">Venue Location</label>
-              {/* ✨ UPDATED PLACEHOLDER */}
               <input type="text" id="VenueLocation" placeholder="e.g., New York, NY" className="w-full rounded-md border-gray-200 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:border-purple-500 focus:ring-purple-500"/>
             </div>
 
@@ -103,7 +98,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(139, 92, 246, 0.3)" }}
                 whileTap={{ scale: 0.98 }}
               >
-                Unlock New Revenue
+                Submit Inquiry
               </motion.button>
             </div>
           </form>

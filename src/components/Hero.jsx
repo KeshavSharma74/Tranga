@@ -56,7 +56,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start"
             >
               <ScrollLink
-                to="discover-the-pods"
+                to="contact" // Updated to scroll to contact section
                 spy={true}
                 smooth={true}
                 offset={-80}
@@ -99,7 +99,6 @@ const Hero = () => {
                 ease: "easeOut"
               }}
             />
-
           </motion.div>
         </div>
       </div>

@@ -24,22 +24,22 @@ const Process = () => {
     const steps = [
         {
             icon: <IoSettingsOutline size={32} />,
-            title: "Zero-Cost, Seamless Installation",
-            description: "Our partnership begins with a no-obligation site survey. We then handle the complete professional installation at zero cost and with minimal disruption to your operations. You do nothing but choose the spot.",
+            title: "Zero-Burden Deployment",
+            description: "We begin with an expert site survey to identify the ideal high-traffic placement. We manage the complete deployment, including all permits and a certified electrician—at zero cost or effort to your staff.",
             color: "#8B5CF6",
             gradient: "from-violet-500 to-purple-600"
         },
         {
             icon: <BsWrenchAdjustableCircle size={32} />,
             title: "Fully-Managed Operations",
-            description: "Forget about maintenance. We take care of everything: automated product restocking, routine servicing, and 24/7 dedicated support, ensuring your Tranga Pod is always online and earning for you.",
+            description: "Forget the hassle. We provide proactive, end-to-end management: automated product restocking, routine asset servicing, and 24/7 technical oversight. Your Tranga Pod is always online, active, and earning for you.",
             color: "#3B82F6",
             gradient: "from-blue-500 to-cyan-500"
         },
         {
             icon: <FaRegHandshake size={32} />,
-            title: "Lucrative Revenue Sharing",
-            description: "This is a true partnership where we only succeed if you do. With no upfront investment, you start earning from day one. We offer a highly competitive commission rate, starting at 30%.",
+            title: "Lucrative Revenue Share",
+            description: "This is a true partnership founded on shared success. With zero upfront investment required, your venue begins generating passive income immediately. We offer a highly competitive, performance-based revenue share.",
             color: "#10B981",
             gradient: "from-emerald-500 to-teal-500"
         },
@@ -83,7 +83,7 @@ const Process = () => {
                         A True Partnership: <span className="gradient-text">Zero Risk, All Reward</span>
                     </h2>
                     <p className="process-main-subtitle">
-                        Transform your unused space into a new revenue stream with our hassle-free commitment. If it doesn't work for you, we simply remove the machine. It's that easy.
+                        We deliver the unique experience directly to your location. Our commitment policy is simple: Should the asset not deliver on its promise, we remove it—no questions asked.
                     </p>
                     
                     <ScrollLink

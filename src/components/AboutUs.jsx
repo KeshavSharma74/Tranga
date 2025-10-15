@@ -1,36 +1,47 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronDown } from 'react-icons/fi'; // A better icon for accordions
+import { FiChevronDown } from 'react-icons/fi';
 
 const AboutUs = () => {
-  const [openIndex, setOpenIndex] = useState(null); // No FAQ is open by default
+  const [openIndex, setOpenIndex] = useState(null);
 
-  // --- UPDATED FAQ DATA BASED ON CLIENT BRIEF ---
   const faqsData = [
-    { 
-      question: "What are the running costs for my venue?", 
-      answer: "Zero. The only operational cost is the minimal electricity to power the pod. Tranga Pods covers 100% of the expenses for installation, maintenance, and all product refills." 
+    {
+      question: "How does the profit sharing work and what is our expected return?",
+      answer: "We confidently offer a competitive revenue share of up to 35% based on venue volume, with zero investment and zero operational burden."
     },
-    { 
-      question: "How does the profit sharing work?", 
-      answer: "Our model is a straightforward revenue share. We offer a highly competitive commission rate starting at 30%. There are no hidden fees—you simply start earning from day one. Contact us to discuss the specific commission split for your venue." 
+    {
+      question: "What is the true operational cost to my venue?",
+      answer: "The only cost to your venue is the negligible electricity consumption. All other operational, installation, and inventory costs are covered by Tranga Pods."
     },
-    { 
-      question: "Can we customize the product selection?", 
-      answer: "Absolutely. For our Fragrance Pods, we'll help you select scents that align with your brand. For Convenience Pods, we stock a curated range of essentials and can discuss specific product needs to make your venue a destination." 
+    {
+      question: "Who is liable for the pods, maintenance, and compliance?",
+      answer: "Zero Liability. Tranga Pods is liable for the pods, its parts, insurance, and all servicing; it is simply \"plug and play\" for your venue."
     },
-    { 
-      question: "How are the machines secured?", 
-      answer: "Our pods are built for high foot traffic areas. Each unit is professionally installed to be tamper-resistant and includes an integrated alarm system, ensuring complete security for your venue." 
+    {
+      question: "How are Tranga Pods fundamentally different from standard vending and mass-market retail?",
+      answer: "We are a data-driven retail ecosystem, not a vending machine. We deliver Global Exclusivity, curating novelty and international items guests cannot find elsewhere, transforming the unit into a destination."
     },
-    { 
-      question: "Who is responsible for repairs and maintenance?", 
-      answer: "We do. Our partnership is completely hassle-free. Tranga Pods takes full responsibility for all servicing and repairs. If any issue arises, our dedicated support team will resolve it promptly at no cost to you." 
+    {
+      question: "How do the Pods act as an internal safety net for our venue operations?",
+      answer: "Our Pods are your dynamic risk mitigation asset. We guarantee instant, situation-specific inventory rotation (e.g. cooling relief for A/C failures) to protect your guest experience and retain sales."
     },
-    { 
-        question: "I have more questions, who can I ask?", 
-        answer: "We're ready to help! Please navigate to our Contact page to send us a message or request a callback. We look forward to discussing how a Tranga Pod can benefit your business." 
+    {
+      question: "Can the fragrance be changed, and how are the products selected?",
+      answer: "Dynamic Curation. Product selection, including our fragrance line, is entirely handled by Tranga Pods and based on real-time sales data from your specific demographic, ensuring perpetual novelty and maximized revenue."
     },
+    {
+      question: "Do we have to take both the Convenience and Fragrance Pods?",
+      answer: "No. We offer customizable asset transformation. You can choose to deploy one pods or both based on your venue's specific needs."
+    },
+    {
+      question: "Where should we put the Pods?",
+      answer: "Specialized Placement. We conduct an expert survey to place Convenience Pods in high-traffic zones and Fragrance Pods strategically in high-amenity areas like restrooms, optimizing for privacy and sales."
+    },
+    {
+      question: "Where is the best location for Tranga Pods?",
+      answer: "The unit is hardwired and built with premium security and advanced componentry; it is fully certified to exceed all US safety standards."
+    }
   ];
 
   const staggerContainer = {
@@ -44,7 +55,6 @@ const AboutUs = () => {
   };
 
   return (
-    // Background gradient remains consistent with other components
     <div className="bg-gradient-to-br from-green-200 via-sky-200 to-purple-200 overflow-hidden">
       <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         
@@ -56,34 +66,32 @@ const AboutUs = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* Text color for header changed to gray-800 for readability */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 tracking-tight">
-            Our Mission: <span className="gradient-text">Empowering Venues</span> with Innovative Revenue
+            Our Mission: <span className="gradient-text">Redefining Convenience, One Pod at a Time</span>
           </h1>
         </motion.div>
 
-        {/* Our Story / Mission Section - Now single column without image */}
-        <div className="max-w-4xl mx-auto text-center"> {/* Centering text for single column */}
+        {/* Our Story / Mission Section */}
+        <div className="max-w-4xl mx-auto text-center">
           
-          {/* --- Text Content --- */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 tracking-tight">
-              Our Commitment to Partnership
-            </h2>
             <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-              Tranga Pods was founded by seasoned entrepreneurs with a simple mission: to create genuine value for our partners. We saw an opportunity to transform underutilized space into a powerful, hassle-free revenue stream. Our core principles are transparency, fairness, and an unwavering commitment to our partners' success.
+              Tranga Pods was born from a simple idea — access matters. Inspired by the effortless convenience found in everyday life back home in Sierra Leone, we recognized the impact of having what you need, exactly when and where you need it. That spirit of accessibility inspired us to reimagine how convenience could look and feel in today’s spaces. We created Tranga Pods to deliver essential products directly to people through sleek, automated experiences.
+            </p>
+            <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+              Our mission is to help businesses unlock effortless new revenue streams while enhancing the customer experience. By combining design, data, and adaptability, we transform underutilized spaces into stylish, profitable touch-points that elevate both brands and experiences. At Tranga Pods, we believe convenience should be stylish, seamless, and mutually beneficial.
             </p>
             <div className="mt-8 border-t border-gray-200 pt-8">
               <h3 className="text-2xl font-bold text-gray-800 tracking-tight">
-                A History of Success
+                Strategic Genesis: The Luxury Retail Ecosystem
               </h3>
               <p className="mt-3 text-lg text-gray-600 leading-relaxed">
-                Our journey began in market-leading consumer tech, where we mastered product safety, logistics, and strategic partnerships. With Tranga Pods, we apply that same dedication to help venues like yours elevate the customer experience and unlock new revenue channels with our premium Fragrance and Convenience Pods.
+                Our vision is rooted in proprietary insights gained from the European luxury retail sector. We apply the proven model of market leaders who integrate complimentary, high-end amenities to successfully delay guest departure and capture revenue. Tranga Pods are the latest evolution of this strategy: self-sustaining assets designed to expand the experience and ensure guests engage with your full venue offering.
               </p>
             </div>
           </motion.div>
@@ -100,10 +108,10 @@ const AboutUs = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 tracking-tight">
-                Your Questions, Answered
+                Absolute Clarity: Your Questions Answered.
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Everything you need to know about our risk-free partnership model.
+                Everything you need to know about our transparent, zero-liability partnership model.
               </p>
             </motion.div>
 
@@ -117,7 +125,7 @@ const AboutUs = () => {
               {faqsData.map((faq, index) => (
                 <motion.div 
                   key={index} 
-                  className="bg-white/70 backdrop-blur-sm border border-gray-100/80 rounded-2xl p-6 shadow-md" // Added card styling
+                  className="bg-white/70 backdrop-blur-sm border border-gray-100/80 rounded-2xl p-6 shadow-md"
                   variants={faqItemVariant}
                 >
                   <button 
@@ -152,10 +160,12 @@ const AboutUs = () => {
                   </AnimatePresence>
                 </motion.div>
               ))}
+                <p className="mt-6 text-center text-gray-600">
+                    Still have a question? Please contact us <a href="#contact" className="text-purple-600 font-semibold hover:underline">here</a> and we'll get back to you with a response as soon as we can.
+                </p>
             </motion.div>
           </div>
         </div>
-
       </div>
     </div>
   );

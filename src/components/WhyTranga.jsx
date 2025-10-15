@@ -1,41 +1,37 @@
 import React from 'react';
 // Importing relevant icons
-import { IoAnalyticsOutline } from "react-icons/io5";
-import { FaHandshake, FaStreetView } from "react-icons/fa";
-import { BsWrenchAdjustableCircle } from "react-icons/bs";
-// Importing motion components from framer-motion
+import { IoAnalyticsOutline, IoGitNetworkOutline } from "react-icons/io5";
+import { FaRegSmileBeam, FaRegThumbsUp } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
-// --- UPDATED Data for the main feature cards (No changes needed here) ---
 const features = [
     {
-        icon: <IoAnalyticsOutline size={32} className="text-white" />,
+        icon: <IoGitNetworkOutline size={32} className="text-white" />,
         bgColor: 'bg-gradient-to-br from-purple-500 to-indigo-600',
-        title: "Transparent Analytics",
-        description: "Access a real-time partner dashboard to monitor performance, track your earnings, and view detailed usage data with complete transparency."
+        title: "Strategic Revenue Diversity",
+        description: "We unlock two distinct, high-yield revenue streams (convenience and fragrance) from a single partnership. This built-in diversity maximizes foot traffic and insulates your income from market fluctuations."
     },
     {
-        icon: <FaHandshake size={32} className="text-white" />,
+        icon: <IoAnalyticsOutline size={32} className="text-white" />,
         bgColor: 'bg-gradient-to-br from-blue-500 to-cyan-500',
-        title: "Generous Profit Sharing",
-        description: "Our success is tied to yours. We offer a highly competitive commission rate starting at 30%, ensuring a mutually beneficial partnership with a significant return for your venue."
+        title: "Next-Gen Retail Intelligence",
+        description: "We transform your underutilized space into a data-driven marketing asset. The intelligence gathered allows you to co-create future services and events that guarantee high guest engagement."
     },
     {
-        icon: <BsWrenchAdjustableCircle size={32} className="text-white" />,
+        icon: <FaRegSmileBeam size={32} className="text-white" />,
         bgColor: 'bg-gradient-to-br from-pink-500 to-rose-500',
-        title: "Zero-Hassle Operation",
-        description: "We handle everything: installation, product restocking, and 24/7 support. Your new revenue stream is completely hands-off for you and always ready for your customers."
+        title: "Curated Guest Experience",
+        description: "Our curated, dynamic catalog of international trends and exclusive items guarantees the amenity is a perpetually fresh, sophisticated draw for your target demographic."
     },
     {
-        icon: <FaStreetView size={32} className="text-white" />,
+        icon: <FaRegThumbsUp size={32} className="text-white" />,
         bgColor: 'bg-gradient-to-br from-emerald-500 to-green-600',
-        title: "A New Foot Traffic Driver",
-        description: "Our pods are stocked with unique, high-demand items and luxurious scents. This exclusive offering makes your venue a destination, attracting new customers."
+        title: "Unconditional, Zero-Risk Commitment",
+        description: "We guarantee the simplest partnership in retail: Zero liability, zero operational burden, and zero upfront cost. We assume all risk, allowing you to focus purely on the guaranteed revenue and brand uplift."
     }
 ];
 
 const WhyTranga = () => {
-    // Animation variants for the grid container
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -44,7 +40,6 @@ const WhyTranga = () => {
         }
     };
 
-    // Animation variants for each card in the grid
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: { 
@@ -66,11 +61,8 @@ const WhyTranga = () => {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gray-800">
-                        Unlock New Revenue with a <span className="gradient-text">Zero-Risk Partnership</span>
+                        The Tranga Difference: Why We Are the <span className="gradient-text">Unrivaled Partner</span>
                     </h2>
-                    <p className="mt-6 text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed">
-                        Tranga Pods offers a completely hassle-free solution to generate new revenue, enhance customer experience, and drive foot traffic. With no upfront costs and a dedicated support system, you only profit.
-                    </p>
                 </motion.div>
                 
                 {/* --- Features Grid --- */}
@@ -111,9 +103,8 @@ const WhyTranga = () => {
                     <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
                         Uncompromising on <span className="text-green-500">Safety</span>
                     </h2>
-                    {/* UPDATED: Changed "UK" to "US" safety standards */}
                     <p className="mt-5 text-lg leading-8 text-gray-600">
-                        We understand that introducing new technology requires absolute confidence. That is why every Tranga Pod is rigorously tested and fully certified to meet and exceed all US safety standards, ensuring it is a secure addition to any environment.
+                        We demand absolute confidence in our assets. Every Tranga Pod is rigorously tested and fully certified to exceed all US safety standards. For seamless integration, each unit operates on a hardwired, fully certified power system, guaranteeing a secure and reliable addition to any environment.
                     </p>
                     <motion.div 
                         className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8"
@@ -122,8 +113,7 @@ const WhyTranga = () => {
                         transition={{ duration: 0.8, delay: 0.4, staggerChildren: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        {/* UPDATED: Changed "UK Certified" to "UL Certified" for the US market */}
-                        {['UL Certified', 'Safety Tested', 'Fully Insured'].map((text, index) => (
+                        {['UL Certified', 'Hardwired Power', 'Fully Insured'].map((text, index) => (
                             <motion.div 
                                 key={text}
                                 className="bg-white/70 border border-gray-200 rounded-full px-4 py-2 flex items-center gap-2 text-sm sm:text-base"
@@ -138,7 +128,6 @@ const WhyTranga = () => {
                         ))}
                     </motion.div>
                 </motion.div>
-
             </div>
         </section>
     );
