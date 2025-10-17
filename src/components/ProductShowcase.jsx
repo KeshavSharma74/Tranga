@@ -78,6 +78,25 @@ const ProductShowcase = () => {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
   };
+  const highlightContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const highlightItemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
 
   return (
     <div className=" bg-gradient-to-br from-green-100 via-sky-100 to-purple-100 overflow-hidden">
@@ -102,7 +121,6 @@ const ProductShowcase = () => {
           Turn Any Corner into a Dynamic, Future-Proof Store. Our partnership is strategic. We eliminate the revenue leak caused by guests leaving for forgotten essentials, while providing an amenity curated specifically for your crowd and events.
         </motion.p>
         
-        {/* --- CONVENIENCE POD SECTION --- */}
         <div id="convenience-pod" className="mt-24">
           <motion.h2 initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight'>
             {conveniencePodData.title}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">{conveniencePodData.highlight}</span>
@@ -112,24 +130,23 @@ const ProductShowcase = () => {
           </motion.p>
         </div>
         
-        {/* --- REVENUE HIGHLIGHT FOR CONVENIENCE POD --- */}
         <div className="mt-12">
           <motion.div
             className="bg-gradient-to-r from-[#FF9E01] to-[#F05258] rounded-2xl shadow-xl p-12 text-center text-white"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
+            variants={highlightContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
           >
-            <h2 className="text-base font-semibold tracking-wider uppercase opacity-80">
+            <motion.h2 variants={highlightItemVariants} className="text-base font-semibold tracking-wider uppercase opacity-80">
               Unlock Your Revenue Potential
-            </h2>
-            <p className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+            </motion.h2>
+            <motion.p variants={highlightItemVariants} className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               $68,800
-            </p>
-            <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl opacity-90">
+            </motion.p>
+            <motion.p variants={highlightItemVariants} className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl opacity-90">
               That's the average earning for venues over a three-year period with our Retention Pods.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
 
@@ -158,7 +175,6 @@ const ProductShowcase = () => {
 
         <div className="my-20 sm:my-28 border-t border-gray-200"></div>
 
-        {/* --- FRAGRANCE POD SECTION --- */}
         <div id="discover-the-pods" className="mt-24">
           <motion.h2 initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className='text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight'>
             {fragrancePodData.title}<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9E01] to-[#F05258]">{fragrancePodData.highlight}</span>
@@ -168,24 +184,23 @@ const ProductShowcase = () => {
           </motion.p>
         </div>
 
-        {/* --- REVENUE HIGHLIGHT FOR FRAGRANCE POD --- */}
         <div className="mt-12">
           <motion.div
             className="bg-gradient-to-r from-[#FF9E01] to-[#F05258] rounded-2xl shadow-xl p-12 text-center text-white"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
+            variants={highlightContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
           >
-            <h2 className="text-base font-semibold tracking-wider uppercase opacity-80">
+            <motion.h2 variants={highlightItemVariants} className="text-base font-semibold tracking-wider uppercase opacity-80">
               Elevate Your Venue's Value
-            </h2>
-            <p className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+            </motion.h2>
+            <motion.p variants={highlightItemVariants} className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               $73,080
-            </p>
-            <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl opacity-90">
+            </motion.p>
+            <motion.p variants={highlightItemVariants} className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl opacity-90">
               That's the average earning for venues over a three-year period with our Reset Pods.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
 
