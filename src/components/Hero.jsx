@@ -12,10 +12,10 @@ const Hero = () => {
     >
       {/* Hero Content */}
       <div className="relative z-10 flex-grow flex items-center w-full max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-col lg:flex-row gap-16 items-center w-full ">
-          
+        <div className="flex flex-col items-center w-full">
+
           {/* Text Section */}
-          <div className="flex  flex-col justify-center gap-8 text-center lg:text-left lg:w-[50%]">
+          <div className="flex flex-col w-full justify-center gap-8 text-center">
             <motion.h1
               initial={{ y: 60, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -40,7 +40,7 @@ const Hero = () => {
                 delay: 0.6,
                 ease: [0.6, 0.05, 0.01, 0.9]
               }}
-              className="text-sm text-gray-600 md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-sm text-gray-600 md:text-xl max-w-3xl mx-auto leading-relaxed"
             >
               Tranga Pods is your flexible asset taking unused space, guaranteeing guest retention and maximized revenue. Choose the Convenience Pod (nightlife essentials that ensure guests stay put and enhance your income streams), the Fragrance Pod (luxury refreshes), or both systems. Our exclusive, sought-after product catalogue dynamically adapts to trends, driving high customer traffic to your venue.
             </motion.p>
@@ -53,7 +53,7 @@ const Hero = () => {
                 delay: 0.9,
                 ease: [0.6, 0.05, 0.01, 0.9]
               }}
-              className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 mt-4 justify-center"
             >
               <ScrollLink
                 to="contact"
@@ -61,7 +61,7 @@ const Hero = () => {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="bg-[#F05258] transition-all duration-300 font-semibold py-3 px-8 rounded-full shadow-md hover:cursor-pointer hover:bg-[#D9463F] hover:shadow-lg hover:shadow-[#F05258]/30 inline-block text-center border border-gray-200"
+                className="bg-[#F05258] transition-all duration-300 font-semibold py-3 px-8 rounded-full shadow-md hover:cursor-pointer hover:bg-[#D9463F] hover:shadow-lg hover:shadow-[#F05258]/30 inline-block text-center"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -74,31 +74,6 @@ const Hero = () => {
               </ScrollLink>
             </motion.div>
           </div>
-
-          {/* ===== IMAGE SECTION ===== */}
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              duration: 1.2,
-              delay: 0.4,
-              ease: [0.6, 0.05, 0.01, 0.9]
-            }}
-            className=" flex flex-col sm:flex-row justify-center items-center lg:w-[60%] mt-10 lg:mt-0 gap-5"
-          >
-            <motion.img
-              src="machine1.png"
-              alt="Convenience Pod"
-              className=" h-full  object-contain "
-              initial={{ y: 20, opacity: 0, scale: 0.95 }}
-              animate={{ y: 0, opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.8,
-                ease: "easeOut"
-              }}
-            />
-          </motion.div>
         </div>
       </div>
     </motion.div>

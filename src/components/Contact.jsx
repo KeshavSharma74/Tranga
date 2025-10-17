@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoCheckmarkCircle } from "react-icons/io5";
+import { IoCheckmarkCircle,IoCallSharp } from "react-icons/io5";
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -36,6 +36,19 @@ const Contact = () => {
               <IoCheckmarkCircle className="text-[#FF9E01] text-2xl" />
               <span><strong>No missed crowds</strong> - attract more visitors.</span>
             </li>
+            <a
+                href="https://calendly.com/partnerships-trangapods/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:underline hover:cursor-pointer"
+              >
+                      <li className="flex hover:underline hover:cursor-pointer items-center gap-2 mt-10">
+                      <IoCallSharp className="text-[#FF9E01] text-2xl" />
+                      <span className='hover:underline hover:cursor-pointer font-bold' >Book a call with Tranga</span>
+            </li>
+
+              </a>
+
           </ul>
         </motion.div>
 

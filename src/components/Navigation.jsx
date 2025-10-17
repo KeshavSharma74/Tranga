@@ -16,7 +16,7 @@ const Navigation = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[100] h-20 bg-white/20 backdrop-blur-lg border-b border-white/30">
-      <div className="max-w-[1750px] h-full mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-[1550px] h-full mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="/">
             <img
