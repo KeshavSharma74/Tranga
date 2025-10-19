@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Process.css';
 import { IoSettingsOutline } from "react-icons/io5";
 import { BsWrenchAdjustableCircle } from "react-icons/bs";
 import { FaRegHandshake } from "react-icons/fa";
@@ -50,40 +49,44 @@ const Process = () => {
         {
             icon: <IoSettingsOutline size={28} />,
             title: "Zero-Burden Deployment",
-            description: "We begin with an expert site survey to identify the ideal high-traffic placement. We manage the complete deployment, including all permits and a certified electrician—at zero cost or effort to your staff.",
+            description: "We Handle Everything. From permits to installation, we take care of every detail — with zero effort or cost on your end.",
             ref: point1Ref,
-            gradient: "from-[#FF9E01] to-[#F05258]"
+            color: 'bg-[#FF9178]', // Burnt Orange
+            progressColor: '#FF9178'
         },
         {
             icon: <BsWrenchAdjustableCircle size={28} />,
             title: "Fully-Managed Operations",
-            description: "Forget the hassle. We provide proactive, end-to-end management: automated product restocking, routine asset servicing, and 24/7 technical oversight. Your Tranga Pod is always online, active, and earning for you.",
+            description: "Fully Managed. Always On. We restock, maintain, and monitor 24/7 so your pod never stops earning.",
             ref: point2Ref,
-            gradient: "from-[#F05258] to-[#FF9E01]"
+            color: 'bg-[#A6D4FA]', // Light Blue
+            progressColor: '#A6D4FA'
         },
         {
             icon: <FaRegHandshake size={28} />,
             title: "Lucrative Revenue Share",
-            description: "This is a true partnership founded on shared success. With zero upfront investment required, your venue begins generating passive income immediately. We offer a highly competitive, performance-based revenue share.",
+            description: "Shared Success. Shared Profit. No upfront cost, no risk — just a performance-based partnership where we win together.",
             ref: point3Ref,
-            gradient: "from-[#FF9E01] to-[#F05258]"
+            color: 'bg-[#FFFD3A]', // Electric Yellow
+            progressColor: '#FFFD3A'
         },
     ];
 
     return (
-        <section className="process-section">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 bg-white">
+            {/* Left Content */}
             <motion.div 
-                className="process-content"
+                className="flex flex-col items-start"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
             >
-                <h2 className="process-title">
-                    A True Partnership: <span>Zero Risk, All Reward</span>
+                <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: '#14132C' }}>
+                    A Partnership That <span style={{ color: '#FF9178' }}>Pays.</span>
                 </h2>
-                <p className="process-subtitle">
-                    We deliver the unique experience directly to your location. Our commitment policy is simple: Should the asset not deliver on its promise, we remove it—no questions asked.
+                <p className="text-lg mb-8 leading-relaxed" style={{ color: '#14132C', opacity: 0.8 }}>
+                    We install, manage, and optimize — you earn. If it doesn't perform, we remove it. Simple, seamless, and success-driven.
                 </p>
                 <ScrollLink
                     to="contact"
@@ -91,27 +94,87 @@ const Process = () => {
                     duration={500}
                     offset={-80}
                 >
-                    <button className="process-button">Become a Partner</button>
+                    <motion.button 
+                        className="px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300"
+                        style={{ 
+                            backgroundColor: '#FF9178',
+                            color: '#14132C'
+                        }}
+                        whileHover={{ 
+                            scale: 1.05, 
+                            backgroundColor: '#FFFD3A',
+                            boxShadow: '0 10px 20px rgba(255, 253, 58, 0.3)'
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        Start Earning Today
+                    </motion.button>
                 </ScrollLink>
             </motion.div>
 
-            <div className="process-timeline" ref={timelineRef}>
-                <div className="timeline-line-bg" style={{ top: point1Ref.current?.offsetTop, height: point2Ref.current && point1Ref.current ? point2Ref.current.offsetTop - point1Ref.current.offsetTop : 0 }} />
-                <div className="timeline-line-bg" style={{ top: point2Ref.current?.offsetTop, height: point3Ref.current && point2Ref.current ? point3Ref.current.offsetTop - point2Ref.current.offsetTop : 0 }} />
+            {/* Right Timeline */}
+            <div className="relative" ref={timelineRef}>
+                {/* Background Lines */}
+                <div 
+                    className="absolute bg-gray-200 w-0.5 transition-all duration-200 z-10"
+                    style={{ 
+                        top: point1Ref.current?.offsetTop, 
+                        height: point2Ref.current && point1Ref.current ? point2Ref.current.offsetTop - point1Ref.current.offsetTop : 0,
+                        left: '1.75rem'
+                    }} 
+                />
+                <div 
+                    className="absolute bg-gray-200 w-0.5 transition-all duration-200 z-10"
+                    style={{ 
+                        top: point2Ref.current?.offsetTop, 
+                        height: point3Ref.current && point2Ref.current ? point3Ref.current.offsetTop - point2Ref.current.offsetTop : 0,
+                        left: '1.75rem'
+                    }} 
+                />
                 
-                <div className="timeline-line-progress" style={{ top: point1Ref.current?.offsetTop, height: point2Ref.current && point1Ref.current ? (point2Ref.current.offsetTop - point1Ref.current.offsetTop) * (progress1 / 100) : 0 }} />
-                <div className="timeline-line-progress" style={{ top: point2Ref.current?.offsetTop, height: point3Ref.current && point2Ref.current ? (point3Ref.current.offsetTop - point2Ref.current.offsetTop) * (progress2 / 100) : 0 }} />
+                {/* Progress Lines */}
+                <div 
+                    className="absolute w-0.5 transition-all duration-200 z-20"
+                    style={{ 
+                        top: point1Ref.current?.offsetTop, 
+                        height: point2Ref.current && point1Ref.current ? (point2Ref.current.offsetTop - point1Ref.current.offsetTop) * (progress1 / 100) : 0,
+                        left: '1.75rem',
+                        backgroundColor: '#FF9178'
+                    }} 
+                />
+                <div 
+                    className="absolute w-0.5 transition-all duration-200 z-20"
+                    style={{ 
+                        top: point2Ref.current?.offsetTop, 
+                        height: point3Ref.current && point2Ref.current ? (point3Ref.current.offsetTop - point2Ref.current.offsetTop) * (progress2 / 100) : 0,
+                        left: '1.75rem',
+                        backgroundColor: '#A6D4FA'
+                    }} 
+                />
 
                 {steps.map((step, index) => (
-                    <div className="timeline-item" key={index} ref={step.ref}>
-                        <div className="timeline-icon-container">
-                            <div className={`timeline-icon bg-gradient-to-br ${step.gradient}`}>
-                                {step.icon}
+                    <div 
+                        key={index} 
+                        ref={step.ref}
+                        className={`flex items-start gap-6 relative ${index < steps.length - 1 ? 'pb-16' : ''}`}
+                    >
+                        {/* Icon */}
+                        <div className="flex-shrink-0 z-30 relative">
+                            <div className={`w-14 h-14 rounded-full flex items-center justify-center ${step.color} shadow-lg`}>
+                                <div style={{ color: '#14132C' }}>
+                                    {step.icon}
+                                </div>
                             </div>
                         </div>
-                        <div className="timeline-text-content">
-                            <h3 className="timeline-item-title">{step.title}</h3>
-                            <p className="timeline-item-description">{step.description}</p>
+
+                        {/* Text Content */}
+                        <div className="pt-1">
+                            <h3 className="text-xl font-bold mb-3" style={{ color: '#14132C' }}>
+                                {step.title}
+                            </h3>
+                            <p className="text-base leading-relaxed" style={{ color: '#14132C', opacity: 0.8 }}>
+                                {step.description}
+                            </p>
                         </div>
                     </div>
                 ))}
