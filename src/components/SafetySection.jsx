@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 
 const SafetySection = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
   const safetyFeatures = [
-    "UL-Certified Components",
-    "Hardwired Power Systems",
-    "Fire-Resistant Materials",
-    "Comprehensive Insurance Coverage",
-    "Industry-Leading Reliability",
+    "Exceeds US Safety Standards",
+    "Certified Hardwired Power",
+    "Full Liability Insurance",
+    "100% Risk Assumption by Tranga Pods",
   ];
 
   const handleMouseMove = (e) => {
@@ -29,7 +29,7 @@ const SafetySection = () => {
         color: "white",
       }}
     >
-      {/* ✨ Cursor-follow gradient effect */}
+      {/* ✨ Cursor-follow gradient glow */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -38,6 +38,7 @@ const SafetySection = () => {
         }}
       />
 
+      {/* ✅ Section content */}
       <motion.div
         className="relative max-w-4xl mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -46,9 +47,9 @@ const SafetySection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-          Certified.{" "}
-          <span style={{ color: "#FF9178" }}>Insured. Trusted.</span>
+          Certified. <span style={{ color: "#FF9178" }}>Insured. Trusted.</span>
         </h2>
+
         <p className="mt-5 text-lg leading-8 opacity-90 max-w-3xl mx-auto">
           Every Tranga Pod meets top U.S. safety standards and runs on fully
           certified, hardwired systems — ensuring seamless, worry-free
@@ -59,7 +60,11 @@ const SafetySection = () => {
           className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, staggerChildren: 0.2 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+            staggerChildren: 0.2,
+          }}
           viewport={{ once: true }}
         >
           {safetyFeatures.map((text, index) => (
