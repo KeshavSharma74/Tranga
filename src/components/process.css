@@ -1,0 +1,144 @@
+.process-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 2rem;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+/* Left Content Side */
+.process-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.process-title {
+    font-size: 2.8rem; /* Increased size */
+    font-weight: 800; /* Increased weight */
+    line-height: 1.2;
+    margin-bottom: 1.5rem; /* Adjusted margin */
+    color: #1a1a2e;
+}
+
+.process-title span {
+    background: linear-gradient(90deg, #FF9E01 0%, #F05258 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.process-subtitle {
+    font-size: 1.1rem; /* Increased size */
+    color: #555;
+    margin-bottom: 2.5rem; /* Adjusted margin */
+}
+
+.process-button {
+    background-color: #FF9E01;
+    color: white;
+    border: none;
+    padding: 1rem 2.2rem; /* Increased padding */
+    border-radius: 8px;
+    font-size: 1.1rem; /* Increased size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.process-button:hover {
+    background-color: #E68F00;
+}
+
+/* Right Timeline Side */
+.process-timeline {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    padding-bottom: 4rem; /* Increased spacing */
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-icon-container {
+    flex-shrink: 0;
+    z-index: 10;
+    position: relative;
+}
+
+.timeline-icon {
+    width: 3.5rem; /* Increased size */
+    height: 3.5rem; /* Increased size */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.timeline-text-content {
+    padding-top: 0.25rem;
+}
+
+.timeline-item-title {
+    font-size: 1.5rem; /* Increased size */
+    font-weight: 700; /* Increased weight */
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    color: #333;
+}
+
+.timeline-item-description {
+    font-size: 1.1rem; /* Increased size */
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Lines for the timeline */
+.timeline-line-bg,
+.timeline-line-progress {
+    position: absolute;
+    left: 1.75rem; /* Adjusted for new icon size (half of 3.5rem) */
+    width: 3px;
+    transform: translateX(-50%);
+    transition: height 0.2s ease-out;
+}
+
+.timeline-line-bg {
+    background-color: #e9ecef;
+    z-index: 1;
+}
+
+.timeline-line-progress {
+    background: linear-gradient(to bottom, #FF9E01, #F05258);
+    z-index: 2;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .process-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .process-content {
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    .process-timeline {
+        padding-left: 0;
+        text-align: left;
+    }
+}
