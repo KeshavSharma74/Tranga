@@ -176,7 +176,7 @@ const ProductShowcase = () => {
   };
 
   return (
-    <div className="bg-white overflow-hidden" style={{ color: '#14132C' }}>
+    <div className="bg-gradient-to-r from-[#CFE8FF] via-[#FFD1C2] to-[#FFFDA8] overflow-hidden" style={{ color: '#14132C' }}>
       <div className='max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center'>
         
         <motion.h1

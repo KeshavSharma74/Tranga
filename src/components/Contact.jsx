@@ -48,22 +48,23 @@ const Contact = () => {
             <p className="text-center mb-6" style={{ color: '#14132C' }}>
               Book a call to see how much your venue could earn.
             </p>
-            <a
-              href="https://calendly.com/partnerships-trangapods/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 font-bold text-lg hover:underline transition-all duration-300"
-              style={{ color: '#14132C' }}
-              onMouseEnter={(e) => {
-                e.target.style.color = '#FF9178';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = '#14132C';
-              }}
-            >
-              <IoCallSharp style={{ color: '#FF9178' }} className="text-2xl" />
-              <span>Book a call with Tranga</span>
-            </a>
+          <a
+    href="https://calendly.com/partnerships-trangapods/30min"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      flex items-center justify-center gap-3
+      font-bold text-lg
+      px-2 py-3 rounded-xl
+      bg-[#FF9178] text-[#14132C]
+      hover:bg-[#FFD166] hover:text-[#14132C]
+      border-2 border-[#FF9178]
+      transition-all duration-300 shadow-md hover:shadow-lg
+    "
+  >
+    <IoCallSharp className="text-2xl text-[#14132C]" />
+    <span>Book a call with Tranga</span>
+  </a>
           </div>
         </motion.div>
 

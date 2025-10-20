@@ -2,6 +2,7 @@ import React from 'react';
 import { IoAnalyticsOutline, IoGitNetworkOutline } from "react-icons/io5";
 import { FaRegSmileBeam, FaRegThumbsUp } from "react-icons/fa";
 import { motion } from 'framer-motion';
+import SafetySection from './SafetySection';
 
 // Using the new HEX color scheme
 const features = [
@@ -111,7 +112,7 @@ const WhyTranga = () => {
             </section>
 
             {/* --- Section 2: Partnership Section --- */}
-            <section className="bg-white py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+            <section className="bg-gradient-to-r from-[#E9F5FF] via-[#FFE8E1] to-[#FFFFD9]  py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -161,43 +162,7 @@ const WhyTranga = () => {
             </section>
 
             {/* --- Section 3: Uncompromising on Safety --- */}
-            <section id="safety" className="py-24 sm:py-32 px-4" style={{ backgroundColor: '#14132C', color: 'white' }}>
-                <motion.div
-                    className="max-w-4xl mx-auto text-center"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                        Certified. <span style={{ color: '#FF9178' }}>Insured. Trusted.</span>
-                    </h2>
-                    <p className="mt-5 text-lg leading-8 opacity-90 max-w-3xl mx-auto">
-                        Every Tranga Pod meets top U.S. safety standards and runs on fully certified, hardwired systems — ensuring seamless, worry-free integration.
-                    </p>
-                    <motion.div 
-                        className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-12"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4, staggerChildren: 0.2 }}
-                        viewport={{ once: true }}
-                    >
-                        {safetyFeatures.map((text, index) => (
-                            <motion.div 
-                                key={text}
-                                className="bg-white/10 border border-white/20 rounded-full px-6 py-3 flex items-center gap-3 text-base font-medium backdrop-blur-sm hover:bg-white/15 transition-all duration-300"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                            >
-                                <span style={{ color: '#FFFD3A' }} className="font-bold text-lg">✓</span>
-                                <span className="text-white">{text}</span>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
-            </section>
+           <SafetySection/>
         </>
     );
 };

@@ -41,7 +41,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="bg-white overflow-hidden" style={{ color: '#14132C' }}>
+    <div className="bg-gradient-to-r from-[#E9F5FF] via-[#FFE8E1] to-[#FFFFD9]  overflow-hidden" style={{ color: '#14132C' }}>
       <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
 
         {/* --- Header --- */}

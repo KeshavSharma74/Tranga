@@ -87,7 +87,7 @@ const Hero = () => {
                   transition={{ duration: 0.2 }}
                   className="w-full text-xl md:2xl h-full hover:cursor-pointer"
                 >
-                  + Add Discover the Pods
+                Discover the Pods
                 </motion.button>
               </ScrollLink>
               
