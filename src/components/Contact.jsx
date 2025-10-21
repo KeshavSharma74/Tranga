@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#A6D4FA' }}>
+    <section
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      style={{ backgroundColor: '#A6D4FA' }}
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         
-        {/* --- Left Column: Information --- */}
+        {/* --- Left Column --- */}
         <motion.div 
           className="pt-8"
           initial={{ opacity: 0, x: -50 }}
@@ -26,48 +29,54 @@ const Contact = () => {
           <div className="mt-8 space-y-4" style={{ color: '#14132C' }}>
             <h3 className="text-xl font-semibold mb-4">Here's what you get:</h3>
             <ul className="flex flex-col gap-4">
-              <li className="flex items-center gap-3">
-                <IoCheckmarkCircle style={{ color: '#FF9178' }} className="text-2xl" />
-                <span><strong>Zero setup or maintenance costs</strong></span>
-              </li>
-              <li className="flex items-center gap-3">
-                <IoCheckmarkCircle style={{ color: '#FF9178' }} className="text-2xl" />
-                <span><strong>A fully managed, data-driven retail amenity</strong></span>
-              </li>
-              <li className="flex items-center gap-3">
-                <IoCheckmarkCircle style={{ color: '#FF9178' }} className="text-2xl" />
-                <span><strong>Passive income from day one</strong></span>
-              </li>
+              {[
+                "Zero setup or maintenance costs",
+                "A fully managed, data-driven retail amenity",
+                "Passive income from day one",
+              ].map((text, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <IoCheckmarkCircle style={{ color: '#FF9178' }} className="text-2xl" />
+                  <span><strong>{text}</strong></span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl border-2 border-dashed" style={{ borderColor: '#FF9178', backgroundColor: 'rgba(255, 145, 120, 0.1)' }}>
-            <p className="text-lg font-semibold mb-4 text-center" style={{ color: '#14132C' }}>
-              Let's get started.
-            </p>
-            <p className="text-center mb-6" style={{ color: '#14132C' }}>
-              Book a call to see how much your venue could earn.
-            </p>
-            <a
+          {/* --- CTA Box --- */}
+          <div
+            className="mt-12 p-6 rounded-2xl border-2 border-dashed text-center"
+            style={{
+              borderColor: '#FF9178',
+              backgroundColor: 'rgba(255, 145, 120, 0.1)',
+              color: '#14132C'
+            }}
+          >
+            <p className="text-lg font-semibold mb-2">Let's get started.</p>
+            <p className="mb-6">Book a call to see how much your venue could earn.</p>
+
+            <motion.a
               href="https://calendly.com/partnerships-trangapods/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 font-bold text-lg hover:underline transition-all duration-300"
-              style={{ color: '#14132C' }}
-              onMouseEnter={(e) => {
-                e.target.style.color = '#FF9178';
+              className="inline-flex items-center justify-center gap-3 rounded-lg px-6 py-3 font-bold text-lg transition-colors"
+              style={{
+                backgroundColor: '#FF9178',
+                color: '#14132C'
               }}
-              onMouseLeave={(e) => {
-                e.target.style.color = '#14132C';
+              whileHover={{
+                backgroundColor: '#FFFD3A',
+                scale: 1.05,
+                boxShadow: '0 10px 20px rgba(255, 145, 120, 0.4)',
               }}
+              whileTap={{ scale: 0.97 }}
             >
-              <IoCallSharp style={{ color: '#FF9178' }} className="text-2xl" />
-              <span>Book a call with Tranga Pods</span>
-            </a>
+              <IoCallSharp style={{ color: '#24b62bff' }} className="text-2xl" />
+              Book a Call with Tranga Pods
+            </motion.a>
           </div>
         </motion.div>
 
-        {/* --- Right Column: Contact Form --- */}
+        {/* --- Right Column (Form) --- */}
         <motion.div 
           className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
           initial={{ opacity: 0, y: 50 }}
@@ -75,66 +84,37 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <form action="#" className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="FirstName" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>First Name</label>
-              <input 
-                type="text" 
-                id="FirstName" 
-                placeholder="Jane" 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-              />
-            </div>
+          <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { id: 'FirstName', label: 'First Name', placeholder: 'Jane' },
+              { id: 'LastName', label: 'Last Name', placeholder: 'Doe' },
+              { id: 'Email', label: 'Email', placeholder: 'jane.doe@example.com', span: 2 },
+              { id: 'VenueName', label: 'Venue Name', placeholder: 'e.g., The Grand Hotel' },
+              { id: 'VenueLocation', label: 'Venue Location', placeholder: 'e.g., New York, NY' },
+            ].map((field, i) => (
+              <div key={i} className={field.span ? 'sm:col-span-2' : ''}>
+                <label htmlFor={field.id} className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>
+                  {field.label}
+                </label>
+                <input
+                  type="text"
+                  id={field.id}
+                  placeholder={field.placeholder}
+                  className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF9178] focus:border-[#FF9178]"
+                  style={{ color: '#14132C' }}
+                />
+              </div>
+            ))}
 
-            <div>
-              <label htmlFor="LastName" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>Last Name</label>
-              <input 
-                type="text" 
-                id="LastName" 
-                placeholder="Doe" 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-              />
-            </div>
-
+            {/* Venue Type */}
             <div className="sm:col-span-2">
-              <label htmlFor="Email" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>Email</label>
-              <input 
-                type="email" 
-                id="Email" 
-                placeholder="jane.doe@example.com" 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-              />
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="VenueType" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>Venue Type</label>
-              <select 
-                id="VenueType" 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
+              <label htmlFor="VenueType" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>
+                Venue Type
+              </label>
+              <select
+                id="VenueType"
+                className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF9178] focus:border-[#FF9178]"
+                style={{ color: '#14132C' }}
               >
                 <option>Please select...</option>
                 <option>Nightclub / Bar / Lounge</option>
@@ -146,69 +126,32 @@ const Contact = () => {
               </select>
             </div>
 
-            <div>
-              <label htmlFor="VenueName" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>Venue Name</label>
-              <input 
-                type="text" 
-                id="VenueName" 
-                placeholder="e.g., The Grand Hotel" 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="VenueLocation" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>Venue Location</label>
-              <input 
-                type="text" 
-                id="VenueLocation" 
-                placeholder="e.g., New York, NY" 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-              />
-            </div>
-
+            {/* Message */}
             <div className="sm:col-span-2">
-              <label htmlFor="Message" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>Message (Optional)</label>
-              <textarea 
-                id="Message" 
-                rows="4" 
-                placeholder="Tell us more about your venue or ask any questions..." 
-                className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1"
-                style={{ 
-                  color: '#14132C',
-                  borderColor: '#A6D4FA',
-                  focusBorderColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-              ></textarea>
+              <label htmlFor="Message" className="block text-sm font-medium mb-1" style={{ color: '#14132C' }}>
+                Message (Optional)
+              </label>
+              <textarea
+                id="Message"
+                rows="4"
+                placeholder="Tell us more about your venue or ask any questions..."
+                className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF9178] focus:border-[#FF9178]"
+                style={{ color: '#14132C' }}
+              />
             </div>
 
+            {/* Submit Button */}
             <div className="sm:col-span-2">
               <motion.button
                 type="submit"
-                className="w-full rounded-lg px-6 py-3 text-center text-sm font-bold text-white transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2"
-                style={{ 
-                  backgroundColor: '#FF9178',
-                  focusRingColor: '#FF9178'
-                }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 10px 20px rgba(255, 145, 120, 0.4)",
+                className="w-full rounded-lg px-6 py-3 text-center text-sm font-bold transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2"
+                style={{ backgroundColor: '#FF9178', color: '#14132C' }}
+                whileHover={{
+                  scale: 1.05,
                   backgroundColor: '#FFFD3A',
-                  color: '#14132C'
+                  boxShadow: "0 10px 20px rgba(255, 145, 120, 0.4)",
                 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 0.97 }}
               >
                 Submit Inquiry
               </motion.button>

@@ -63,7 +63,7 @@ const Hero = () => {
             >
               {/* Primary Button — styles & hover handled on motion.button only */}
               <ScrollLink
-                to="contact"
+                to="discover-the-pods"
                 spy={true}
                 smooth={true}
                 offset={-80}
@@ -92,7 +92,7 @@ const Hero = () => {
               
               {/* Secondary Button — hover handled on motion.button only */}
               <ScrollLink
-                to="product-showcase"
+                to="process"
                 spy={true}
                 smooth={true}
                 offset={-80}

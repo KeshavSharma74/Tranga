@@ -41,65 +41,23 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="relative bg-white overflow-hidden" style={{ color: '#14132C' }}>
-      {/* ---------- Solid circles behind content (top-left & bottom-right) ---------- */}
-      {/* Top-left large circle (E9F5FF) + smaller peach (FFE8E1) */}
-      <div
-        aria-hidden="true"
-        className="absolute z-0 pointer-events-none"
-        style={{
-          top: '-9rem',
-          left: '-9rem',
-          width: '680px',
-          height: '680px',
-          borderRadius: '9999px',
-          backgroundColor: '#E9F5FF',
-          opacity: 1,
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute z-0 pointer-events-none"
-        style={{
-          top: '-3rem',
-          left: '-3rem',
-          width: '420px',
-          height: '420px',
-          borderRadius: '9999px',
-          backgroundColor: '#FFE8E1',
-          opacity: 1,
-        }}
-      />
+ <div
+  className="relative overflow-hidden"
+  style={{
+    color: '#14132C',
+    background: `
+      radial-gradient(circle at 0% 50%, rgba(166, 212, 250, 0.35) 0%, transparent 55%),
+      radial-gradient(circle at 100% 50%, rgba(255, 145, 120, 0.32) 0%, transparent 55%),
+      radial-gradient(circle at 0% 50%, rgba(255, 253, 58, 0.15) 0%, transparent 70%),
+      radial-gradient(circle at 100% 50%, rgba(20, 19, 44, 0.18) 0%, transparent 70%),
+      radial-gradient(circle at center, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 25%, rgba(255,255,255,0.88) 60%)
+    `,
+    backgroundBlendMode: "soft-light, overlay, normal",
+  }}
+>
 
-      {/* Bottom-right large circle (FFFFD9) + smaller light-blue accent */}
-      <div
-        aria-hidden="true"
-        className="absolute z-0 pointer-events-none"
-        style={{
-          bottom: '-9rem',
-          right: '-9rem',
-          width: '720px',
-          height: '720px',
-          borderRadius: '9999px',
-          backgroundColor: '#FFFFD9',
-          opacity: 1,
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute z-0 pointer-events-none"
-        style={{
-          bottom: '-3rem',
-          right: '-3rem',
-          width: '420px',
-          height: '420px',
-          borderRadius: '9999px',
-          backgroundColor: '#E9F5FF',
-          opacity: 1,
-        }}
-      />
+      <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
 
-      <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative z-10">
         {/* --- Header --- */}
         <motion.div
           className="text-center mb-16 md:mb-20"

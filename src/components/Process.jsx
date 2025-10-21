@@ -124,7 +124,7 @@ const Process = () => {
   };
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-20 sm:py-28 bg-gradient-to-r from-[#E9F5FF] via-[#FFE8E1] to-[#FFFFD9] px-3 md:px-10 lg:px-20">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-20 sm:py-28 bg-white px-3 md:px-10 lg:px-20">
       {/* Left Content */}
       <motion.div 
         className="flex flex-col items-start"

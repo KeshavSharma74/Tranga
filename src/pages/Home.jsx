@@ -1,8 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
-import HowItWorks from '../components/HowItWorks';
-import DiscoverTheMachine from '../components/DiscoverTheMachine';
+import HowItWorks from '../components/HowItWorks'; 
 import Process from '../components/Process';
 import WhyTranga from '../components/WhyTranga';
 import AboutUs from '../components/AboutUs';
@@ -21,7 +20,9 @@ const Home = () => {
         {/* Added div wrappers with IDs for scrolling */}
         {/* <div id="how-it-works" className='px-1' ><HowItWorks /></div> */}
         {/* <div id="discover-the-machine" className='px-1'><DiscoverTheMachine /></div> */}
+       
         <ProductShowcase />
+
         <div id="process" className='' ><Process /></div>
         <div id="why-tranga"  ><WhyTranga /></div>
       </div>

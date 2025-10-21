@@ -37,7 +37,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Tranga. All rights reserved.
+            © {new Date().getFullYear()} Tranga LLC d/b/a Tranga Pods. All right reserved. All rights reserved.
           </p>
         </div>
       </div>
