@@ -70,7 +70,7 @@ const Contact = () => {
               }}
               whileTap={{ scale: 0.97 }}
             >
-              <IoCallSharp style={{ color: '#24b62bff' }} className="text-2xl" />
+              <IoCallSharp style={{ color: '#ffff' }} className="text-2xl" />
               Book a Call with Tranga Pods
             </motion.a>
           </div>

@@ -180,15 +180,16 @@ const ProductShowcase = () => {
   className="relative overflow-hidden"
   style={{
     background: `
-      radial-gradient(circle at left center, rgba(166, 212, 250, 0.35) 0%, transparent 55%),
-      radial-gradient(circle at right center, rgba(255, 145, 120, 0.32) 0%, transparent 55%),
-      radial-gradient(circle at left center, rgba(255, 253, 58, 0.18) 0%, transparent 70%),
-      radial-gradient(circle at right center, rgba(20, 19, 44, 0.2) 0%, transparent 70%),
-      linear-gradient(90deg, #ffffff 0%, #ffffff 50%, #ffffff 100%)
+      radial-gradient(circle at left center, rgba(166, 212, 250, 0.12) 0%, transparent 70%),
+      radial-gradient(circle at right center, rgba(255, 145, 120, 0.10) 0%, transparent 70%),
+      radial-gradient(circle at left center, rgba(255, 253, 58, 0.06) 0%, transparent 80%),
+      radial-gradient(circle at right center, rgba(20, 19, 44, 0.06) 0%, transparent 80%),
+      linear-gradient(90deg, #ffffff 0%, #ffffff 100%)
     `,
     backgroundBlendMode: "soft-light, normal",
   }}
 >
+
 
 
       {/* ---------- Solid color circles (no gradients) ---------- */}
