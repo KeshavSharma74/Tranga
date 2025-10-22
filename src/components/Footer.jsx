@@ -9,7 +9,7 @@ const Footer = () => {
                   
         <div className="md:col-span-3">
           <a href="/" className="text-2xl font-bold text-white">
-            Tranga
+            <img src="footerLogo.png" className='h-10' alt="" />
           </a>
         </div>
 
