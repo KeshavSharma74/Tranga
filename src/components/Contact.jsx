@@ -1,8 +1,47 @@
-import React from 'react';
+import React, { useRef, useState } from 'react'; // <-- ADD useRef and useState
+import emailjs from '@emailjs/browser'; // <-- ADD THIS
 import { IoCheckmarkCircle, IoCallSharp } from "react-icons/io5";
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+  const form = useRef(); // <-- ADD THIS
+  const [isSubmitting, setIsSubmitting] = useState(false); // <-- ADD THIS
+  const [isSuccess, setIsSuccess] = useState(false); // <-- ADD THIS
+  const navigate = useNavigate();
+
+  // <-- ADD THIS ENTIRE FUNCTION
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevents the page from reloading
+    setIsSubmitting(true);
+    setIsSuccess(false);
+
+    // console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID); 
+    // console.log(import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    // console.log(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    emailjs.sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID, // NEW
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // NEW
+          form.current,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY // NEW
+        )
+      .then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+          setIsSubmitting(false);
+          setIsSuccess(true);
+          e.target.reset(); // Resets the form after successful submission
+          navigate('/contact'); // Redirect to ContactSuccess page
+        },
+        (error) => {
+          // console.log('FAILED...', error);
+          setIsSubmitting(false);
+          alert('Failed to send message. Please try again.');
+        }
+      );
+  };
+
   return (
     <section
       className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
@@ -10,7 +49,7 @@ const Contact = () => {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         
-        {/* --- Left Column --- */}
+        {/* --- Left Column (No changes here) --- */}
         <motion.div 
           className="pt-8"
           initial={{ opacity: 0, x: -50 }}
@@ -42,7 +81,6 @@ const Contact = () => {
             </ul>
           </div>
 
-          {/* --- CTA Box --- */}
           <div
             className="mt-12 p-6 rounded-2xl border-2 border-dashed text-center"
             style={{
@@ -84,7 +122,8 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* // <-- ADD ref and onSubmit --> */}
+          <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { id: 'FirstName', label: 'First Name', placeholder: 'Jane' },
               { id: 'LastName', label: 'Last Name', placeholder: 'Doe' },
@@ -99,9 +138,11 @@ const Contact = () => {
                 <input
                   type="text"
                   id={field.id}
+                  name={field.id} // <-- ADD THIS name ATTRIBUTE (must match template)
                   placeholder={field.placeholder}
                   className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF9178] focus:border-[#FF9178]"
                   style={{ color: '#14132C' }}
+                  required // <-- ADD THIS for validation
                 />
               </div>
             ))}
@@ -113,10 +154,12 @@ const Contact = () => {
               </label>
               <select
                 id="VenueType"
+                name="VenueType" // <-- ADD THIS name ATTRIBUTE
                 className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF9178] focus:border-[#FF9178]"
                 style={{ color: '#14132C' }}
+                required // <-- ADD THIS for validation
               >
-                <option>Please select...</option>
+                <option value="">Please select...</option> {/* <-- Add empty value */}
                 <option>Nightclub / Bar / Lounge</option>
                 <option>Gym / Spa / Salon</option>
                 <option>Luxury Mall / Retail</option>
@@ -133,6 +176,7 @@ const Contact = () => {
               </label>
               <textarea
                 id="Message"
+                name="Message" // <-- ADD THIS name ATTRIBUTE
                 rows="4"
                 placeholder="Tell us more about your venue or ask any questions..."
                 className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FF9178] focus:border-[#FF9178]"
@@ -144,17 +188,26 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <motion.button
                 type="submit"
-                className="w-full rounded-lg px-6 py-3 text-center text-sm font-bold transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2"
+                disabled={isSubmitting} // <-- ADD THIS
+                className="w-full rounded-lg px-6 py-3 text-center text-sm font-bold transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50" // <-- Add disabled style
                 style={{ backgroundColor: '#FF9178', color: '#14132C' }}
                 whileHover={{
-                  scale: 1.05,
-                  backgroundColor: '#FFFD3A',
-                  boxShadow: "0 10px 20px rgba(255, 145, 120, 0.4)",
+                  scale: isSubmitting ? 1 : 1.05, // <-- Disable hover when submitting
+                  backgroundColor: isSubmitting ? '#FF9178' : '#FFFD3A',
+                  boxShadow: isSubmitting ? "none" : "0 10px 20px rgba(255, 145, 120, 0.4)",
                 }}
-                whileTap={{ scale: 0.97 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.97 }} // <-- Disable tap
               >
-                Submit Inquiry
+                {/* // <-- ADD THIS LOGIC --> */}
+                {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
               </motion.button>
+
+              {/* // <-- ADD THIS SUCCESS MESSAGE --> */}
+              {/* {isSuccess && (
+                <p className="text-center mt-4 text-green-600 font-semibold">
+                  Thank you! Your inquiry has been sent.
+                </p>
+              )} */}
             </div>
           </form>
         </motion.div>
