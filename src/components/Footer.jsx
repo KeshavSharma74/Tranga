@@ -1,17 +1,42 @@
 import React from 'react';
-import { Link } from 'react-scroll'; // Make sure Link is imported
+import { Link } from 'react-scroll';
+import { FaFacebook, FaInstagram } from 'react-icons/fa'; // ✨ IMPORT ICONS
 
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-gray-300">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                  
-        <div className="md:col-span-3">
-          <a href="/" className="text-2xl font-bold text-white">
-            <img src="footerLogo.png" className='h-10' alt="" />
-          </a>
-        </div>
+          
+          <div className="md:col-span-3">
+            <a href="/" className="text-2xl font-bold text-white">
+              <img src="footerLogo.png" className="h-10" alt="Tranga Pods Logo" />
+            </a>
+            
+            {/* ✨ ADDED THIS SECTION FOR SOCIAL ICONS */}
+            <div className="pl-3 flex items-center gap-4 mt-4">
+              <a 
+                href="https://www.facebook.com/people/Tranga-Pods/61581808216740/#" // Dummy link
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a 
+                href="https://www.instagram.com/trangapods/#" // Dummy link
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <FaInstagram size={24} />
+              </a>
+            </div>
+            {/* ✨ END OF ADDED SECTION */}
+
+          </div>
 
           <div className="md:col-span-9">
             <h3 className="text-lg font-semibold text-white">Discover Tranga</h3>
@@ -20,10 +45,7 @@ const Footer = () => {
                 <Link to="how-it-works" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">How it works</Link>
                 <Link to="discover-the-pods" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Discover the Pods</Link>
                 <Link to="process" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Process</Link>
-                
-                {/* ✨ CHANGED THIS LINE from <a> to <Link> */}
                 <Link to="safety" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Safety</Link>
-                
               </div>
               <div className="flex flex-col gap-3">
                 <Link to="why-tranga" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-white transition-colors duration-200">Why partner with Tranga</Link>
@@ -37,7 +59,8 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Tranga LLC d/b/a Tranga Pods. All right reserved. All rights reserved.
+            © {new Date().getFullYear()} Tranga LLC d/b/a Tranga Pods. All rights reserved.
+            {/* Removed the duplicate "All rights reserved" */}
           </p>
         </div>
       </div>
